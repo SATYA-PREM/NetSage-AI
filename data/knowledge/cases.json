@@ -1,0 +1,38 @@
+[
+  {
+    "case_id": "CASE-001",
+    "symptom": "PC has IP but cannot communicate",
+    "topology": "PC connected to VLAN 10",
+    "show_output": "IP 192.168.10.20/24; Gateway 192.168.20.1",
+    "expected_fault": "Wrong default gateway",
+    "osi_layer": "Layer 3",
+    "concept": "IP addressing",
+    "severity": "High",
+    "next_command": "ipconfig /all",
+    "fix": "Change gateway to the correct subnet gateway."
+  },
+  {
+    "case_id": "CASE-002",
+    "symptom": "Users in one VLAN cannot reach another VLAN",
+    "topology": "Access switch uplink to router",
+    "show_output": "show ip route reports no route",
+    "expected_fault": "Missing inter-VLAN route",
+    "osi_layer": "Layer 3",
+    "concept": "Routing",
+    "severity": "High",
+    "next_command": "show ip route",
+    "fix": "Add and verify the required route after human approval."
+  },
+  {
+    "case_id": "CASE-003",
+    "symptom": "Device cannot obtain an address",
+    "topology": "Client connected to access VLAN",
+    "show_output": "show vlan brief shows VLAN 20 missing",
+    "expected_fault": "Missing access VLAN",
+    "osi_layer": "Layer 2",
+    "concept": "DHCP and VLAN",
+    "severity": "Medium",
+    "next_command": "show vlan brief",
+    "fix": "Create or correct the VLAN assignment after review."
+  }
+]

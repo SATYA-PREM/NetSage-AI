@@ -1,0 +1,4 @@
+case_id,symptom,topology,show_output,expected_fault,osi_layer,concept,severity,next_command,fix
+CASE-001,PC has IP but cannot communicate,PC connected to VLAN 10,IP 192.168.10.20/24; Gateway 192.168.20.1,Wrong default gateway,Layer 3,IP addressing,High,ipconfig /all,Change gateway to the correct subnet gateway.
+CASE-002,Users in one VLAN cannot reach another VLAN,Access switch uplink to router,show ip route reports no route,Missing inter-VLAN route,Layer 3,Routing,High,show ip route,Add and verify the required route after human approval.
+CASE-003,Device cannot obtain an address,Client connected to access VLAN,show vlan brief shows VLAN 20 missing,Missing access VLAN,Layer 2,DHCP and VLAN,Medium,show vlan brief,Create or correct the VLAN assignment after review.

@@ -1,0 +1,2 @@
+function SimilarCases({ cases = [] }) { return <section className="panel"><div className="section-title"><h3>Similar verified cases</h3><span>Top matches</span></div>{cases.length ? cases.map((item) => <div className="similar-row" key={item.case_id}><span className="case-dot" /><div><strong>{item.case_id}</strong><p>{item.expected_fault || item.symptom}</p></div><b>{Math.round((item.similarity_score || 0) * 100)}%</b></div>) : <p className="muted">No matching cases yet. Add verified cases to the knowledge base.</p>}</section>; }
+export default SimilarCases;

@@ -1,0 +1,2 @@
+function Evidence({ checks = [] }) { return <section className="panel"><div className="section-title"><h3>Deterministic checks</h3><span>{checks.length} signals</span></div>{checks.length ? checks.map((check, index) => <div className="check-row" key={index}><span className={check.status === 'FAIL' ? 'check-badge fail' : 'check-badge'}>{check.status}</span><p>{check.evidence}</p></div>) : <p className="muted">No deterministic issues found in supplied evidence.</p>}</section>; }
+export default Evidence;
