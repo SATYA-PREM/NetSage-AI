@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+
+.env
+
+.vscode/
+
+node_modules/
+dist/
+
+data/diagnoses.json
+data/reviews.json
+data/responsible_ai_log.json

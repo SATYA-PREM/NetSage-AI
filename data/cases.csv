@@ -1,4 +1,33 @@
-case_id,symptom,topology,show_output,expected_fault,osi_layer,concept,severity,next_command,fix
-CASE-001,PC has IP but cannot communicate,PC connected to VLAN 10,IP 192.168.10.20/24; Gateway 192.168.20.1,Wrong default gateway,Layer 3,IP addressing,High,ipconfig /all,Change gateway to the correct subnet gateway.
-CASE-002,Users in one VLAN cannot reach another VLAN,Access switch uplink to router,show ip route reports no route,Missing inter-VLAN route,Layer 3,Routing,High,show ip route,Add and verify the required route after human approval.
-CASE-003,Device cannot obtain an address,Client connected to access VLAN,show vlan brief shows VLAN 20 missing,Missing access VLAN,Layer 2,DHCP and VLAN,Medium,show vlan brief,Create or correct the VLAN assignment after review.
+case_id,title,symptom,topology_note,show_outputs,expected_fault,osi_layer,concept,severity
+NET-001,VLAN 30 Server Unreachable,PC gets an IP address but cannot reach the server,PC -> SW1 -> R1 -> Server,"show ip interface brief\nG0/0 192.168.30.1 up up\nshow ip route\nC 192.168.30.0/24 is directly connected",Inter-VLAN routing or ACL issue,Layer 3/4,VLAN,High
+case_id,title,device,device_type,issue,severity,status,source_ip,destination_ip,vlan_id,interface,protocol,description
+CASE-001,VLAN connectivity failure,SW-CORE-01,Switch,VLAN users cannot reach gateway,High,Open,192.168.20.15,192.168.20.1,20,GigabitEthernet0/1,ICMP,Users connected to VLAN 20 cannot ping the default gateway
+CASE-002,Inter-VLAN routing failure,RTR-01,Router,Inter-VLAN communication failing,High,Investigating,192.168.10.25,192.168.20.25,10,GigabitEthernet0/0,ICMP,Hosts in VLAN 10 cannot communicate with hosts in VLAN 20
+CASE-003,Interface down,SW-ACCESS-02,Switch,Uplink interface is down,Critical,Open,10.0.0.10,10.0.0.1,,GigabitEthernet0/24,Ethernet,Uplink interface shows down status
+CASE-004,Duplicate IP address,SW-ACCESS-01,Switch,Duplicate IP detected,High,Open,192.168.1.25,192.168.1.1,10,GigabitEthernet0/5,ARP,Two devices appear to be using the same IP address
+CASE-005,Incorrect subnet mask,PC-102,Host,Host cannot reach remote subnet,Medium,Open,192.168.10.50,192.168.20.50,10,Ethernet0,ICMP,Host has an incorrect subnet mask configured
+CASE-006,Missing default gateway,PC-103,Host,External network unreachable,Medium,Open,192.168.10.51,8.8.8.8,10,Ethernet0,ICMP,Host can communicate locally but cannot reach external networks
+CASE-007,VLAN mismatch,SW-ACCESS-03,Switch,Device placed in wrong VLAN,High,Investigating,192.168.30.15,192.168.30.1,20,GigabitEthernet0/10,802.1Q,Access port is configured for VLAN 20 while endpoint should be in VLAN 30
+CASE-008,Trunk configuration failure,SW-CORE-01,Switch,VLAN traffic not passing trunk,High,Open,192.168.20.10,192.168.20.1,,GigabitEthernet0/2,802.1Q,VLAN 20 traffic is not allowed across the trunk
+CASE-009,Routing table missing,RTR-02,Router,Remote network unreachable,High,Open,192.168.10.10,192.168.40.10,,GigabitEthernet0/1,IP,Router has no route to the destination network
+CASE-010,Static route incorrect,RTR-03,Router,Traffic sent to wrong next hop,High,Investigating,192.168.10.20,192.168.50.20,,GigabitEthernet0/1,IP,Static route points to an incorrect next-hop address
+CASE-011,DHCP failure,SW-ACCESS-04,Switch,Client not receiving IP address,Medium,Open,0.0.0.0,255.255.255.255,30,GigabitEthernet0/15,DHCP,Client receives no DHCP address
+CASE-012,DNS resolution failure,PC-110,Host,Domain names cannot be resolved,Medium,Open,192.168.30.20,8.8.8.8,30,Ethernet0,DNS,Network connectivity works but DNS queries fail
+CASE-013,Port security violation,SW-ACCESS-05,Switch,Port blocked due to security violation,High,Open,192.168.40.20,192.168.40.1,40,GigabitEthernet0/8,802.1X,Switch port was disabled after an unexpected MAC address was detected
+CASE-014,ARP resolution failure,PC-120,Host,Gateway MAC cannot be resolved,High,Open,192.168.50.20,192.168.50.1,50,Ethernet0,ARP,Host cannot resolve the MAC address of its default gateway
+CASE-015,Packet loss,RTR-01,Router,Intermittent connectivity,Medium,Investigating,10.10.10.10,10.10.20.10,,GigabitEthernet0/2,ICMP,Approximately 30 percent packet loss occurs between two network segments
+CASE-016,Wrong IP configuration,PC-121,Host,Host cannot communicate,High,Open,192.168.10.25,192.168.10.1,10,Ethernet0,ICMP,Host has an IP address outside the configured subnet,IP,Incorrect IP address
+CASE-017,Invalid gateway,PC-122,Host,Remote networks unreachable,High,Open,192.168.20.25,192.168.30.25,20,Ethernet0,ICMP,Default gateway is configured incorrectly,IP,Incorrect default gateway
+CASE-018,Subnet mismatch,PC-123,Host,Gateway unreachable,Medium,Open,192.168.30.25,192.168.30.1,30,Ethernet0,ICMP,Host subnet mask does not match the network configuration,IP,Incorrect subnet mask
+CASE-019,VLAN missing,SW-ACCESS-06,Switch,Clients cannot communicate,High,Open,192.168.40.25,192.168.40.1,40,GigabitEthernet0/10,ICMP,VLAN 40 is not present on the switch,VLAN,VLAN does not exist
+CASE-020,Access VLAN mismatch,SW-ACCESS-07,Switch,Client placed in wrong network,High,Open,192.168.50.25,192.168.50.1,50,GigabitEthernet0/12,802.1Q,Access interface is assigned to the wrong VLAN,VLAN,Incorrect access VLAN
+CASE-021,Trunk VLAN missing,SW-CORE-02,Switch,VLAN traffic stopped across trunk,Critical,Open,192.168.60.25,192.168.60.1,60,GigabitEthernet0/1,802.1Q,VLAN 60 is not allowed on the trunk,VLAN,VLAN not allowed on trunk
+CASE-022,Routing entry missing,RTR-04,Router,Remote subnet unreachable,High,Open,192.168.10.10,192.168.70.10,,GigabitEthernet0/1,IP,Destination network is missing from the routing table,Routing,Missing route
+CASE-023,Wrong next hop,RTR-05,Router,Traffic follows incorrect path,High,Investigating,192.168.10.20,192.168.80.20,,GigabitEthernet0/2,IP,Static route points to an invalid next hop,Routing,Incorrect next hop
+CASE-024,Interface administratively down,SW-ACCESS-08,Switch,Endpoint has no connectivity,Critical,Open,192.168.90.20,192.168.90.1,90,GigabitEthernet0/8,Ethernet,Interface is administratively shut down,Interface,Interface shutdown
+CASE-025,Interface error rate,SW-ACCESS-09,Switch,Intermittent packet loss,High,Investigating,192.168.100.20,192.168.100.1,100,GigabitEthernet0/9,Ethernet,Interface reports a high number of input errors,Interface,Physical/interface errors
+CASE-026,DHCP unavailable,SW-ACCESS-10,Switch,Client receives no IP,Medium,Open,0.0.0.0,255.255.255.255,110,GigabitEthernet0/15,DHCP,DHCP requests receive no response,DHCP,DHCP server unavailable
+CASE-027,DNS server unreachable,PC-130,Host,Domain resolution fails,Medium,Open,192.168.110.20,8.8.8.8,110,Ethernet0,DNS,Client cannot reach configured DNS server,DNS,DNS server unreachable
+CASE-028,ARP failure,PC-131,Host,Gateway MAC unresolved,High,Open,192.168.120.20,192.168.120.1,120,Ethernet0,ARP,ARP requests receive no valid response,ARP,ARP resolution failure
+CASE-029,ACL blocking traffic,RTR-06,Router,Application traffic blocked,High,Investigating,192.168.130.20,192.168.140.20,,GigabitEthernet0/0,TCP,Access control rule blocks the destination traffic,Security,ACL rule blocking traffic
+CASE-030,NAT translation failure,RTR-07,Router,Internal clients cannot access Internet,High,Open,192.168.150.20,8.8.8.8,,GigabitEthernet0/0,NAT,NAT translation is not being created,NAT,NAT configuration failure

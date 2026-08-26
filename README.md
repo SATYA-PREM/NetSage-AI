@@ -1,46 +1,214 @@
 # NetSage AI
 
-NetSage AI is a local-first Cisco troubleshooting assistant. React sends evidence to Flask, which runs deterministic checks, retrieves verified cases, asks a local Qwen GGUF model through `llama-cli`, validates the JSON response, and stores the complete investigation in `data/history/`. Every recommendation requires human review and no Cisco command is executed automatically.
+NetSage AI is an AI-assisted network troubleshooting application. It combines deterministic network rules with Gemini-generated diagnosis reports and provides a React dashboard for cases, evidence, diagnosis, and reviews.
 
-## Setup
+## Stack
 
-From PowerShell at the repository root:
+- Backend: Python, FastAPI, Uvicorn, Pydantic Settings
+- AI: Google Gemini through `google-genai`
+- Frontend: React 18, Vite, React Router, Lucide React
+- Data: CSV and JSON files in `data/`
+
+## Project Structure
+
+```text
+backend/       FastAPI application, API routes, rules, and services
+data/          Cases, diagnoses, reviews, and responsible-AI log files
+frontend/      React and Vite web application
+prompts/       Gemini diagnosis prompt
+tests/         Test directory
+```
+
+## Prerequisites
+
+Install the following before starting:
+
+- Python 3.10 or newer
+- Node.js 18 or newer and npm
+- A Google Gemini API key
+
+## Configuration
+
+Create a `.env` file in the repository root:
+
+```dotenv
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_MODEL=gemini-3.6-flash
+HOST=127.0.0.1
+PORT=8000
+```
+
+`GEMINI_API_KEY` is required when the backend starts. Never commit a real API key or share it in documentation. If a key has been exposed, revoke it and create a replacement.
+
+## Backend Setup and Run
+
+Open PowerShell at the repository root:
 
 ```powershell
+cd D:\PROJECTS\NetSage-AI\ai\NetSage-AI
+
+# Create a virtual environment (first setup only)
 python -m venv .venv
+
+# Activate it for the current PowerShell session
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 .\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python training\prepare_dataset.py
-cd frontend
+
+# Install backend dependencies
+python -m pip install --upgrade pip
+python -m pip install -r backend\requirements.txt
+
+# Start the API with auto-reload
+python -m uvicorn backend.main:app --reload
+```
+
+The backend is available at:
+
+- API: http://127.0.0.1:8000
+- Swagger UI: http://127.0.0.1:8000/docs
+- ReDoc: http://127.0.0.1:8000/redoc
+- Health check: http://127.0.0.1:8000/health
+
+To use a different host or port:
+
+```powershell
+python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Stop the backend with `Ctrl+C`.
+
+## Frontend Setup and Run
+
+Open a second PowerShell window at the repository root:
+
+```powershell
+cd D:\PROJECTS\NetSage-AI\ai\NetSage-AI\frontend
+
+# Install frontend dependencies (first setup only)
 npm install
-```
 
-Copy `.env.example` to `.env` and set `LLAMA_CLI_PATH` if `llama-cli.exe` is not on PATH. `MODEL_PATH` defaults to `models/base/Qwen3-4B-Q4_K_M.gguf`. The llama.cpp path uses CPU-compatible flags and does not assume CUDA; AMD GPU acceleration can be configured separately in the llama.cpp build. Local Qwen is attempted first. When it is unavailable, set `OPENROUTER_API_KEY` to use the configured free OpenRouter model. Network evidence is sent to OpenRouter only when this key is explicitly configured.
-
-## Run
-
-Terminal 1:
-
-```powershell
-.\.venv\Scripts\Activate.ps1
-python backend\app.py
-```
-
-Terminal 2:
-
-```powershell
-cd frontend
+# Start the Vite development server
 npm run dev
 ```
 
-Open `http://localhost:5173`. Test the backend with `Invoke-RestMethod http://127.0.0.1:5000/api/health`.
+Open the URL printed by Vite, normally http://localhost:5173.
 
-## API
+Stop the frontend with `Ctrl+C`.
 
-`GET /api/health`, `POST /api/diagnose`, `GET /api/history`, `GET /api/history/<case_id>`, `GET /api/roadmap/<case_id>`, `POST /api/step/<case_id>`, `POST /api/review/<case_id>`, `GET /api/cases`, and `POST /api/cases` are implemented in `backend/app.py`.
+### Frontend Commands
 
-## Data and roadmap
+Run these from `frontend/`:
 
-`training/prepare_dataset.py` merges CSV cases into JSON by `case_id`. Diagnoses are immutable history records; reviews are also copied to `data/reviews/`. Reviewed corrections can later be converted into JSONL chat records. Do not fine-tune until at least 30-40 high-quality reviewed cases exist. The current system is retrieval plus deterministic validation and structured prompting, not fine-tuning.
+```powershell
+npm run dev       # Development server
+npm run build     # Production build in frontend/dist
+npm run preview   # Preview the production build locally
+```
 
-The initial LLM integration starts `llama-cli` per request, which is simple but slower. A persistent llama.cpp server can replace `backend/llm.py` later without changing the API. All user-provided command output is treated as untrusted text.
+## API Endpoints
+
+All API routes are defined in `backend/main.py` and are available under `/api`:
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/` | API status and version |
+| `GET` | `/health` | Health check |
+| `GET` | `/api/cases` | List troubleshooting cases from `data/cases.csv` |
+| `POST` | `/api/diagnosis` | Generate a diagnosis for a network symptom |
+| `GET` | `/api/reviews` | List saved reviews |
+| `POST` | `/api/reviews` | Save a diagnosis review |
+| `GET` | `/api/dashboard` | Return dashboard metrics |
+
+The complete request and response schemas are available in Swagger UI at `/docs`.
+
+### Diagnosis Request Example
+
+```powershell
+Invoke-RestMethod `
+  -Uri http://127.0.0.1:8000/api/diagnosis `
+  -Method Post `
+  -ContentType "application/json" `
+  -Body (@{
+    case_id = "CUSTOM"
+    symptom = "Users cannot reach the application server"
+    topology = "Client -> access switch -> router -> server VLAN"
+    command_output = "show ip route"
+    device = "R1"
+    device_type = "router"
+    severity = "High"
+  } | ConvertTo-Json)
+```
+
+A diagnosis request must include a non-empty `symptom`. The remaining fields are optional and default to empty strings or `Medium` severity.
+
+## Data Files
+
+- `data/cases.csv`: Troubleshooting cases shown in the frontend
+- `data/diagnoses.json`: Stored diagnosis data
+- `data/reviews.json`: User review data
+- `data/responsible_ai_log.json`: Responsible-AI activity log
+- `prompts/diagnose_prompt.md`: Prompt used to synthesize diagnosis reports
+
+The backend resolves these paths relative to the repository root, so run it from the root directory when troubleshooting import or configuration issues.
+
+## Verification
+
+From the repository root, with the virtual environment activated:
+
+```powershell
+python -c "from backend.main import app; print(app.title)"
+```
+
+From `frontend/`:
+
+```powershell
+npm run build
+```
+
+You can also verify the running API:
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:8000/health
+```
+
+Expected response:
+
+```json
+{
+  "status": "healthy",
+  "service": "netsage-ai-backend"
+}
+```
+
+## Troubleshooting
+
+### `GEMINI_API_KEY` validation error
+
+Ensure `.env` exists at the repository root and contains a valid `GEMINI_API_KEY`. Restart Uvicorn after changing it.
+
+### `ModuleNotFoundError: backend`
+
+Run Uvicorn from the repository root and use:
+
+```powershell
+python -m uvicorn backend.main:app --reload
+```
+
+### Frontend cannot reach the API
+
+Confirm that the backend is running on port `8000` and the frontend is running on port `5173` or `5174`. Those frontend origins are enabled by the backend CORS configuration.
+
+### Port already in use
+
+Start the backend on another port and update the frontend API configuration if needed:
+
+```powershell
+python -m uvicorn backend.main:app --port 8001 --reload
+```
+
+## Development Notes
+
+- The rule engine runs before Gemini diagnosis synthesis.
+- Changes to backend Python files reload the API when Uvicorn is started with `--reload`.
+- Changes to frontend files are handled by Vite hot module replacement.
+- There are currently no test files in `tests/`; add focused tests as backend behavior grows.

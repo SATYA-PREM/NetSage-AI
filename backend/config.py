@@ -1,29 +1,53 @@
-import os
 from pathlib import Path
 
-try:
-    from dotenv import load_dotenv
-except ImportError:
-    load_dotenv = None
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
+
+# Project root
 ROOT_DIR = Path(__file__).resolve().parent.parent
-if load_dotenv:
-    load_dotenv(ROOT_DIR / ".env")
-DATA_DIR = ROOT_DIR / "data"
-HISTORY_DIR = DATA_DIR / "history"
-REVIEWS_DIR = DATA_DIR / "reviews"
-KNOWLEDGE_FILE = DATA_DIR / "knowledge" / "cases.json"
-MODEL_PATH = Path(os.getenv("MODEL_PATH", str(ROOT_DIR / "models" / "base" / "Qwen3-4B-Q4_K_M.gguf")))
-LLAMA_CLI_PATH = os.getenv("LLAMA_CLI_PATH", "llama-cli.exe")
-LLAMA_SERVER_URL = os.getenv("LLAMA_SERVER_URL", "http://127.0.0.1:8080/v1/chat/completions")
-LLAMA_SERVER_MODEL = os.getenv("LLAMA_SERVER_MODEL", "local-model")
-LLAMA_CLI_FALLBACK = os.getenv("LLAMA_CLI_FALLBACK", "false").lower() == "true"
-HOST = os.getenv("HOST", "127.0.0.1")
-PORT = int(os.getenv("PORT", "5000"))
-FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
-OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "google/gemma-3-27b-it:free")
-OPENROUTER_URL = os.getenv("OPENROUTER_URL", "https://openrouter.ai/api/v1/chat/completions")
 
-for directory in (HISTORY_DIR, REVIEWS_DIR, KNOWLEDGE_FILE.parent):
-    directory.mkdir(parents=True, exist_ok=True)
+# Directories
+DATA_DIR = ROOT_DIR / "data"
+PROMPTS_DIR = ROOT_DIR / "prompts"
+
+
+class Settings(BaseSettings):
+
+    # Application
+    APP_NAME: str = "NetSage AI"
+    APP_VERSION: str = "1.0.0"
+
+    HOST: str = "127.0.0.1"
+    PORT: int = 8000
+
+    # Gemini
+    GEMINI_API_KEY: str
+    GEMINI_MODEL: str = "gemini-3.6-flash"
+
+    # LLM configuration
+    LLM_TEMPERATURE: float = 0.1
+    LLM_MAX_TOKENS: int = 1500
+
+    # Data files
+    CASES_FILE: Path = DATA_DIR / "cases.csv"
+    DIAGNOSES_FILE: Path = DATA_DIR / "diagnoses.json"
+    REVIEWS_FILE: Path = DATA_DIR / "reviews.json"
+    RESPONSIBLE_AI_FILE: Path = (
+        DATA_DIR / "responsible_ai_log.json"
+    )
+
+    # Prompt
+    PROMPT_FILE: Path = (
+        PROMPTS_DIR / "diagnose_prompt.md"
+    )
+
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore"
+    )
+
+
+# IMPORTANT:
+# main.py imports this object.
+settings = Settings()

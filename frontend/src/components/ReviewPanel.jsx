@@ -1,3 +1,46 @@
-import { useState } from 'react';
-function ReviewPanel({ caseId, onReview }) { const [note, setNote] = useState(''); const [status, setStatus] = useState(''); const submit = () => { if (status === 'rejected' && !note.trim()) return; onReview(caseId, { status, correct: status === 'accepted' ? true : status === 'rejected' ? false : null, reviewer_note: note }); }; return <section className="panel review-panel"><div><span className="eyebrow">HUMAN REVIEW</span><h3>Is this assessment useful?</h3><p>Record your decision to improve future troubleshooting.</p></div><textarea value={note} onChange={(event) => setNote(event.target.value)} placeholder="Reviewer note (required for rejection)" /><div className="review-actions"><button onClick={() => { setStatus('accepted'); onReview(caseId, { status: 'accepted', correct: true, reviewer_note: note }); }}>Accept</button><button onClick={() => { setStatus('edited'); onReview(caseId, { status: 'edited', correct: false, reviewer_note: note }); }}>Edit</button><button className="danger-button" onClick={() => { setStatus('rejected'); }}>Reject</button>{status === 'rejected' && <button className="primary-button" onClick={submit}>Save rejection</button>}</div></section>; }
+import { CheckCircle2, Code2, ShieldCheck, X } from "lucide-react";
+
+function ReviewPanel({ diagnosis, reviewState, reviewComment, setReviewComment, onSubmit }) {
+  if (!diagnosis) return null;
+  if (reviewState !== "idle") {
+    return (
+      <div className="review-box">
+        <div className="review-complete">
+          <CheckCircle2 size={18} />
+          <div>
+            <strong>Review recorded</strong>
+            <span>Decision: {reviewState}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className="review-box">
+      <div className="review-title">
+        <ShieldCheck size={18} />
+        <div>
+          <strong>Human review</strong>
+          <span>Approve, edit, or reject the AI recommendation.</span>
+        </div>
+      </div>
+      <textarea
+        value={reviewComment}
+        onChange={(e) => setReviewComment(e.target.value)}
+        placeholder="Reviewer note..."
+      />
+      <div className="review-actions">
+        <button className="review-accept" onClick={() => onSubmit("ACCEPTED")}>
+          <CheckCircle2 size={15} /> Accept
+        </button>
+        <button className="review-edit" onClick={() => onSubmit("EDITED")}>
+          <Code2 size={15} /> Edit
+        </button>
+        <button className="review-reject" onClick={() => onSubmit("REJECTED")}>
+          <X size={15} /> Reject
+        </button>
+      </div>
+    </div>
+  );
+}
 export default ReviewPanel;

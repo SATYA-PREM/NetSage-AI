@@ -1,0 +1,29 @@
+[
+  {
+    "review_id": "aa79c854-f58e-4009-bdd8-7c2a580543e5",
+    "case_id": "CUSTOM",
+    "diagnosis_id": "DGN-2DB4D6BD",
+    "decision": "EDITED",
+    "reviewer_comment": "",
+    "corrected_diagnosis": "",
+    "created_at": "2026-08-26T08:13:04.464804+00:00"
+  },
+  {
+    "review_id": "de8a68d4-06b7-4397-95aa-86390b3b0332",
+    "case_id": "CUSTOM",
+    "diagnosis_id": "DGN-2F30C422",
+    "decision": "EDITED",
+    "reviewer_comment": "",
+    "corrected_diagnosis": "",
+    "created_at": "2026-08-26T08:27:29.984676+00:00"
+  },
+  {
+    "review_id": "e0b6a62d-d157-4a45-8ff1-ba86f8ff6de3",
+    "case_id": "CUSTOM",
+    "diagnosis_id": "DGN-59774E77",
+    "decision": "REJECTED",
+    "reviewer_comment": "not acceptable",
+    "corrected_diagnosis": null,
+    "created_at": "2026-08-26T08:30:30.725260+00:00"
+  }
+]
