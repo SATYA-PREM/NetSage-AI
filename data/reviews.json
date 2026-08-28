@@ -52,5 +52,32 @@
     "reviewer_comment": "",
     "corrected_diagnosis": null,
     "created_at": "2026-08-26T09:13:40.070942+00:00"
+  },
+  {
+    "review_id": "c1930b49-758c-4c7c-85fe-f0b80bf4816c",
+    "case_id": "CUSTOM",
+    "diagnosis_id": "DGN-5DF844BB",
+    "decision": "ACCEPTED",
+    "reviewer_comment": "",
+    "corrected_diagnosis": null,
+    "created_at": "2026-08-27T09:31:22.346584+00:00"
+  },
+  {
+    "review_id": "7f2a192e-9c7b-4d09-993b-a5b29486d9d3",
+    "case_id": "string",
+    "diagnosis_id": "DGN-9D34DF6B",
+    "decision": "ACCEPTED",
+    "reviewer_comment": "the vlan is good the trunk was was not getting",
+    "corrected_diagnosis": "fix the truck in the switch section",
+    "created_at": "2026-08-27T20:10:48.384375+00:00"
+  },
+  {
+    "review_id": "56f7b70d-b034-4b76-82ef-dc81658cfc94",
+    "case_id": "CUSTOM",
+    "diagnosis_id": "DGN-A51414AA",
+    "decision": "ACCEPTED",
+    "reviewer_comment": "Verify the affected access ports belong to VLAN 20.",
+    "corrected_diagnosis": null,
+    "created_at": "2026-08-27T20:17:02.741672+00:00"
   }
 ]

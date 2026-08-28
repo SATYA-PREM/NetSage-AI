@@ -13083,5 +13083,2019 @@
       "human_review_required": true,
       "automatic_configuration_change": false
     }
+  },
+  {
+    "diagnosis_id": "DGN-078E6C3D",
+    "case_id": "CUSTOM",
+    "status": "RESULT_READY",
+    "processing_status": "AI_COMPLETE",
+    "category": "IP Address Resolution",
+    "root_cause": "Insufficient information to determine root cause. The symptom indicates an inability to resolve or obtain the IP address of a destination user (potentially due to a DNS, DHCP, or local mapping failure).",
+    "diagnosis": "Insufficient information to determine root cause. The symptom indicates an inability to resolve or obtain the IP address of a destination user (potentially due to a DNS, DHCP, or local mapping failure).",
+    "confidence": 0.1,
+    "confidence_percent": 10,
+    "osi_layer": "Layer 3",
+    "evidence": [
+      "Symptom reported: 'CANT GET THE IP ADDRESS OF THE DESINATION USER'"
+    ],
+    "more_evidence_required": true,
+    "recommended_commands": [
+      "nslookup <destination_hostname>",
+      "ping <destination_hostname>",
+      "show ip arp",
+      "show hosts",
+      "show run | include ip name-server"
+    ],
+    "proposed_remediation": [
+      "Verify DNS server reachability and configuration on the source host.",
+      "Check DHCP lease status if the destination user is dynamically addressed.",
+      "Gather basic network topology and specify the target device hostname or location."
+    ],
+    "similar_cases": [],
+    "deterministic_findings": [],
+    "historical_case_analysis": [
+      "No matched test cases or historical cases were provided in the evidence package. Cannot compare the current symptom to historical scenarios."
+    ],
+    "uncertainties": [
+      "No network topology, device configuration, or command outputs were provided.",
+      "It is unclear whether 'get the IP address' refers to DNS hostname resolution, DHCP lease allocation, or ARP discovery."
+    ],
+    "ai_analysis": {
+      "ai_available": true,
+      "category": "IP Address Resolution",
+      "root_cause": "Insufficient information to determine root cause. The symptom indicates an inability to resolve or obtain the IP address of a destination user (potentially due to a DNS, DHCP, or local mapping failure).",
+      "confidence": 0.1,
+      "osi_layer": "Layer 3",
+      "evidence": [
+        "Symptom reported: 'CANT GET THE IP ADDRESS OF THE DESINATION USER'"
+      ],
+      "recommended_commands": [
+        "nslookup <destination_hostname>",
+        "ping <destination_hostname>",
+        "show ip arp",
+        "show hosts",
+        "show run | include ip name-server"
+      ],
+      "proposed_remediation": [
+        "Verify DNS server reachability and configuration on the source host.",
+        "Check DHCP lease status if the destination user is dynamically addressed.",
+        "Gather basic network topology and specify the target device hostname or location."
+      ],
+      "historical_case_analysis": [
+        "No matched test cases or historical cases were provided in the evidence package. Cannot compare the current symptom to historical scenarios."
+      ],
+      "uncertainties": [
+        "No network topology, device configuration, or command outputs were provided.",
+        "It is unclear whether 'get the IP address' refers to DNS hostname resolution, DHCP lease allocation, or ARP discovery."
+      ],
+      "human_review_required": true
+    },
+    "gemini_input": {
+      "incident": {
+        "case_id": "CUSTOM",
+        "symptom": "CANT GET THE IP ADDRESS OF THE DESINATION USER",
+        "topology": "",
+        "command_output": "",
+        "device": "",
+        "device_type": "",
+        "severity": "Medium"
+      },
+      "deterministic_analysis": {
+        "matched": false,
+        "category": "Unknown",
+        "root_cause": null,
+        "confidence": 0.0,
+        "osi_layer": null,
+        "evidence": [],
+        "recommended_commands": [],
+        "proposed_remediation": []
+      },
+      "rule_engine_findings": [],
+      "similar_historical_cases": [],
+      "matched_test_cases": []
+    },
+    "human_review_required": true,
+    "created_at": "2026-08-26T16:40:34.482792",
+    "responsible_ai": {
+      "rules_run_before_ai": true,
+      "historical_cases_used": true,
+      "ai_mediated_case_and_rules": true,
+      "human_review_required": true,
+      "automatic_configuration_change": false
+    }
+  },
+  {
+    "diagnosis_id": "DGN-C749CB23",
+    "case_id": "CUSTOM",
+    "status": "RESULT_READY",
+    "processing_status": "RULES_ONLY",
+    "category": "Unknown",
+    "root_cause": "No root cause established",
+    "diagnosis": "No root cause established",
+    "confidence": 0.0,
+    "confidence_percent": 0,
+    "osi_layer": null,
+    "evidence": [],
+    "more_evidence_required": true,
+    "recommended_commands": [],
+    "proposed_remediation": [],
+    "similar_cases": [],
+    "deterministic_findings": [],
+    "historical_case_analysis": [],
+    "uncertainties": [
+      "AI diagnosis was unavailable: "
+    ],
+    "ai_analysis": {
+      "ai_available": false,
+      "error": "",
+      "category": "Unknown",
+      "root_cause": "No root cause established",
+      "confidence": 0.0,
+      "osi_layer": "",
+      "evidence": [],
+      "recommended_commands": [],
+      "proposed_remediation": [],
+      "historical_case_analysis": [],
+      "uncertainties": [
+        "AI diagnosis was unavailable: "
+      ],
+      "human_review_required": true
+    },
+    "gemini_input": {
+      "incident": {
+        "case_id": "CUSTOM",
+        "symptom": "ip addres is nt working",
+        "topology": "",
+        "command_output": "",
+        "device": "",
+        "device_type": "",
+        "severity": "Medium"
+      },
+      "deterministic_analysis": {
+        "matched": false,
+        "category": "Unknown",
+        "root_cause": null,
+        "confidence": 0.0,
+        "osi_layer": null,
+        "evidence": [],
+        "recommended_commands": [],
+        "proposed_remediation": []
+      },
+      "rule_engine_findings": [],
+      "similar_historical_cases": [],
+      "matched_test_cases": []
+    },
+    "human_review_required": true,
+    "created_at": "2026-08-27T09:27:07.792478",
+    "responsible_ai": {
+      "rules_run_before_ai": true,
+      "historical_cases_used": true,
+      "ai_mediated_case_and_rules": true,
+      "human_review_required": true,
+      "automatic_configuration_change": false
+    }
+  },
+  {
+    "diagnosis_id": "DGN-4306335B",
+    "case_id": "CUSTOM",
+    "status": "RESULT_READY",
+    "processing_status": "AI_COMPLETE",
+    "category": "DHCP",
+    "root_cause": "DHCP server failure or unreachability leading to clients self-assigning APIPA (169.254.x.x) IP addresses. The exact root cause cannot be determined due to insufficient evidence.",
+    "diagnosis": "DHCP server failure or unreachability leading to clients self-assigning APIPA (169.254.x.x) IP addresses. The exact root cause cannot be determined due to insufficient evidence.",
+    "confidence": 0.2,
+    "confidence_percent": 20,
+    "osi_layer": "Layer 3",
+    "evidence": [
+      "Symptom: Devices show a self-assigned IP address starting with 169, meaning the DHCP server failed."
+    ],
+    "more_evidence_required": true,
+    "recommended_commands": [
+      "show running-config | include ip helper-address",
+      "show ip dhcp binding",
+      "show ip dhcp conflict",
+      "show interfaces status"
+    ],
+    "proposed_remediation": [
+      "Verify the DHCP server service is active and running.",
+      "Check if the DHCP pool has available IP addresses.",
+      "Ensure 'ip helper-address' is configured on the router/Layer 3 switch interface if the DHCP server is on a different subnet.",
+      "Verify Layer 2 connectivity (VLANs, trunking) between the client and the DHCP server or relay agent."
+    ],
+    "similar_cases": [
+      {
+        "case_id": "CASE-011",
+        "title": "DHCP failure",
+        "device": "SW-ACCESS-04",
+        "device_type": "Switch",
+        "issue": "Client not receiving IP address",
+        "severity": "Medium",
+        "status": "Open",
+        "source_ip": "0.0.0.0",
+        "destination_ip": "255.255.255.255",
+        "vlan_id": "30",
+        "interface": "GigabitEthernet0/15",
+        "protocol": "DHCP",
+        "description": "Client receives no DHCP address",
+        "similarity": 0.062
+      },
+      {
+        "case_id": "CASE-004",
+        "title": "Duplicate IP address",
+        "device": "SW-ACCESS-01",
+        "device_type": "Switch",
+        "issue": "Duplicate IP detected",
+        "severity": "High",
+        "status": "Open",
+        "source_ip": "192.168.1.25",
+        "destination_ip": "192.168.1.1",
+        "vlan_id": "10",
+        "interface": "GigabitEthernet0/5",
+        "protocol": "ARP",
+        "description": "Two devices appear to be using the same IP address",
+        "similarity": 0.056
+      },
+      {
+        "case_id": "CASE-026",
+        "title": "DHCP unavailable",
+        "device": "SW-ACCESS-10",
+        "device_type": "Switch",
+        "issue": "Client receives no IP",
+        "severity": "Medium",
+        "status": "Open",
+        "source_ip": "0.0.0.0",
+        "destination_ip": "255.255.255.255",
+        "vlan_id": "110",
+        "interface": "GigabitEthernet0/15",
+        "protocol": "DHCP",
+        "description": "DHCP requests receive no response",
+        "similarity": 0.056
+      },
+      {
+        "case_id": "NET-001",
+        "title": "VLAN 30 Server Unreachable",
+        "symptom": "PC gets an IP address but cannot reach the server",
+        "topology_note": "PC -> SW1 -> R1 -> Server",
+        "show_outputs": "show ip interface brief\\nG0/0 192.168.30.1 up up\\nshow ip route\\nC 192.168.30.0/24 is directly connected",
+        "expected_fault": "Inter-VLAN routing or ACL issue",
+        "osi_layer": "Layer 3/4",
+        "concept": "VLAN",
+        "severity": "High",
+        "similarity": 0.053
+      },
+      {
+        "case_id": "CASE-002",
+        "title": "Inter-VLAN routing failure",
+        "device": "RTR-01",
+        "device_type": "Router",
+        "issue": "Inter-VLAN communication failing",
+        "severity": "High",
+        "status": "Investigating",
+        "source_ip": "192.168.10.25",
+        "destination_ip": "192.168.20.25",
+        "vlan_id": "10",
+        "interface": "GigabitEthernet0/0",
+        "protocol": "ICMP",
+        "description": "Hosts in VLAN 10 cannot communicate with hosts in VLAN 20",
+        "similarity": 0.053
+      }
+    ],
+    "deterministic_findings": [],
+    "historical_case_analysis": [
+      "CASE-011 (DHCP failure) supports the symptom as clients failed to receive an IP address on SW-ACCESS-04.",
+      "CASE-026 (DHCP unavailable) supports the symptom as DHCP requests received no response on SW-ACCESS-10.",
+      "CASE-004 (Duplicate IP address) conflicts with the symptom because it involves active devices with assigned IP addresses experiencing ARP conflicts, rather than failing to get an IP.",
+      "NET-001 (VLAN 30 Server Unreachable) conflicts because the client successfully obtains an IP address but faces connectivity issues.",
+      "CASE-002 (Inter-VLAN routing failure) conflicts with the symptom as it focuses on communication between already configured hosts in different subnets rather than DHCP assignment."
+    ],
+    "uncertainties": [
+      "No topology or device configurations provided to locate the DHCP server or verify helper address settings.",
+      "No command outputs provided to check the state of the DHCP server or the interface statistics.",
+      "The scope of the impact (single VLAN or multiple VLANs) is unknown."
+    ],
+    "ai_analysis": {
+      "ai_available": true,
+      "category": "DHCP",
+      "root_cause": "DHCP server failure or unreachability leading to clients self-assigning APIPA (169.254.x.x) IP addresses. The exact root cause cannot be determined due to insufficient evidence.",
+      "confidence": 0.2,
+      "osi_layer": "Layer 3",
+      "evidence": [
+        "Symptom: Devices show a self-assigned IP address starting with 169, meaning the DHCP server failed."
+      ],
+      "recommended_commands": [
+        "show running-config | include ip helper-address",
+        "show ip dhcp binding",
+        "show ip dhcp conflict",
+        "show interfaces status"
+      ],
+      "proposed_remediation": [
+        "Verify the DHCP server service is active and running.",
+        "Check if the DHCP pool has available IP addresses.",
+        "Ensure 'ip helper-address' is configured on the router/Layer 3 switch interface if the DHCP server is on a different subnet.",
+        "Verify Layer 2 connectivity (VLANs, trunking) between the client and the DHCP server or relay agent."
+      ],
+      "historical_case_analysis": [
+        "CASE-011 (DHCP failure) supports the symptom as clients failed to receive an IP address on SW-ACCESS-04.",
+        "CASE-026 (DHCP unavailable) supports the symptom as DHCP requests received no response on SW-ACCESS-10.",
+        "CASE-004 (Duplicate IP address) conflicts with the symptom because it involves active devices with assigned IP addresses experiencing ARP conflicts, rather than failing to get an IP.",
+        "NET-001 (VLAN 30 Server Unreachable) conflicts because the client successfully obtains an IP address but faces connectivity issues.",
+        "CASE-002 (Inter-VLAN routing failure) conflicts with the symptom as it focuses on communication between already configured hosts in different subnets rather than DHCP assignment."
+      ],
+      "uncertainties": [
+        "No topology or device configurations provided to locate the DHCP server or verify helper address settings.",
+        "No command outputs provided to check the state of the DHCP server or the interface statistics.",
+        "The scope of the impact (single VLAN or multiple VLANs) is unknown."
+      ],
+      "human_review_required": true
+    },
+    "gemini_input": {
+      "incident": {
+        "case_id": "CUSTOM",
+        "symptom": "IP Address Errors: Devices show a self-assigned IP address starting with 169, meaning the DHCP server failed.",
+        "topology": "",
+        "command_output": "",
+        "device": "",
+        "device_type": "",
+        "severity": "Medium"
+      },
+      "deterministic_analysis": {
+        "matched": false,
+        "category": "Unknown",
+        "root_cause": null,
+        "confidence": 0.0,
+        "osi_layer": null,
+        "evidence": [],
+        "recommended_commands": [],
+        "proposed_remediation": []
+      },
+      "rule_engine_findings": [],
+      "similar_historical_cases": [
+        {
+          "case_id": "CASE-011",
+          "title": "DHCP failure",
+          "device": "SW-ACCESS-04",
+          "device_type": "Switch",
+          "issue": "Client not receiving IP address",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "0.0.0.0",
+          "destination_ip": "255.255.255.255",
+          "vlan_id": "30",
+          "interface": "GigabitEthernet0/15",
+          "protocol": "DHCP",
+          "description": "Client receives no DHCP address",
+          "similarity": 0.062
+        },
+        {
+          "case_id": "CASE-004",
+          "title": "Duplicate IP address",
+          "device": "SW-ACCESS-01",
+          "device_type": "Switch",
+          "issue": "Duplicate IP detected",
+          "severity": "High",
+          "status": "Open",
+          "source_ip": "192.168.1.25",
+          "destination_ip": "192.168.1.1",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/5",
+          "protocol": "ARP",
+          "description": "Two devices appear to be using the same IP address",
+          "similarity": 0.056
+        },
+        {
+          "case_id": "CASE-026",
+          "title": "DHCP unavailable",
+          "device": "SW-ACCESS-10",
+          "device_type": "Switch",
+          "issue": "Client receives no IP",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "0.0.0.0",
+          "destination_ip": "255.255.255.255",
+          "vlan_id": "110",
+          "interface": "GigabitEthernet0/15",
+          "protocol": "DHCP",
+          "description": "DHCP requests receive no response",
+          "similarity": 0.056
+        },
+        {
+          "case_id": "NET-001",
+          "title": "VLAN 30 Server Unreachable",
+          "symptom": "PC gets an IP address but cannot reach the server",
+          "topology_note": "PC -> SW1 -> R1 -> Server",
+          "show_outputs": "show ip interface brief\\nG0/0 192.168.30.1 up up\\nshow ip route\\nC 192.168.30.0/24 is directly connected",
+          "expected_fault": "Inter-VLAN routing or ACL issue",
+          "osi_layer": "Layer 3/4",
+          "concept": "VLAN",
+          "severity": "High",
+          "similarity": 0.053
+        },
+        {
+          "case_id": "CASE-002",
+          "title": "Inter-VLAN routing failure",
+          "device": "RTR-01",
+          "device_type": "Router",
+          "issue": "Inter-VLAN communication failing",
+          "severity": "High",
+          "status": "Investigating",
+          "source_ip": "192.168.10.25",
+          "destination_ip": "192.168.20.25",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/0",
+          "protocol": "ICMP",
+          "description": "Hosts in VLAN 10 cannot communicate with hosts in VLAN 20",
+          "similarity": 0.053
+        }
+      ],
+      "matched_test_cases": [
+        {
+          "case_id": "CASE-011",
+          "title": "DHCP failure",
+          "device": "SW-ACCESS-04",
+          "device_type": "Switch",
+          "issue": "Client not receiving IP address",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "0.0.0.0",
+          "destination_ip": "255.255.255.255",
+          "vlan_id": "30",
+          "interface": "GigabitEthernet0/15",
+          "protocol": "DHCP",
+          "description": "Client receives no DHCP address",
+          "similarity": 0.062
+        },
+        {
+          "case_id": "CASE-004",
+          "title": "Duplicate IP address",
+          "device": "SW-ACCESS-01",
+          "device_type": "Switch",
+          "issue": "Duplicate IP detected",
+          "severity": "High",
+          "status": "Open",
+          "source_ip": "192.168.1.25",
+          "destination_ip": "192.168.1.1",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/5",
+          "protocol": "ARP",
+          "description": "Two devices appear to be using the same IP address",
+          "similarity": 0.056
+        },
+        {
+          "case_id": "CASE-026",
+          "title": "DHCP unavailable",
+          "device": "SW-ACCESS-10",
+          "device_type": "Switch",
+          "issue": "Client receives no IP",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "0.0.0.0",
+          "destination_ip": "255.255.255.255",
+          "vlan_id": "110",
+          "interface": "GigabitEthernet0/15",
+          "protocol": "DHCP",
+          "description": "DHCP requests receive no response",
+          "similarity": 0.056
+        },
+        {
+          "case_id": "NET-001",
+          "title": "VLAN 30 Server Unreachable",
+          "symptom": "PC gets an IP address but cannot reach the server",
+          "topology_note": "PC -> SW1 -> R1 -> Server",
+          "show_outputs": "show ip interface brief\\nG0/0 192.168.30.1 up up\\nshow ip route\\nC 192.168.30.0/24 is directly connected",
+          "expected_fault": "Inter-VLAN routing or ACL issue",
+          "osi_layer": "Layer 3/4",
+          "concept": "VLAN",
+          "severity": "High",
+          "similarity": 0.053
+        },
+        {
+          "case_id": "CASE-002",
+          "title": "Inter-VLAN routing failure",
+          "device": "RTR-01",
+          "device_type": "Router",
+          "issue": "Inter-VLAN communication failing",
+          "severity": "High",
+          "status": "Investigating",
+          "source_ip": "192.168.10.25",
+          "destination_ip": "192.168.20.25",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/0",
+          "protocol": "ICMP",
+          "description": "Hosts in VLAN 10 cannot communicate with hosts in VLAN 20",
+          "similarity": 0.053
+        }
+      ]
+    },
+    "human_review_required": true,
+    "created_at": "2026-08-27T09:28:29.184306",
+    "responsible_ai": {
+      "rules_run_before_ai": true,
+      "historical_cases_used": true,
+      "ai_mediated_case_and_rules": true,
+      "human_review_required": true,
+      "automatic_configuration_change": false
+    }
+  },
+  {
+    "diagnosis_id": "DGN-5DF844BB",
+    "case_id": "CUSTOM",
+    "status": "RESULT_READY",
+    "processing_status": "AI_COMPLETE",
+    "category": "Infrastructure Services",
+    "root_cause": "DHCP server failure or reachability issue, resulting in clients assigning themselves APIPA addresses (169.254.0.0/16).",
+    "diagnosis": "DHCP server failure or reachability issue, resulting in clients assigning themselves APIPA addresses (169.254.0.0/16).",
+    "confidence": 0.35,
+    "confidence_percent": 35,
+    "osi_layer": "Layer 3",
+    "evidence": [
+      "Devices show a self-assigned IP address starting with 169, which indicates APIPA is active due to a lack of DHCP responses."
+    ],
+    "more_evidence_required": true,
+    "recommended_commands": [
+      "show ip dhcp binding",
+      "show ip dhcp conflict",
+      "show running-config interface <interface-id>",
+      "show running-config | include ip helper-address",
+      "show ip interface brief"
+    ],
+    "proposed_remediation": [
+      "Verify if the DHCP server process is running and has free addresses in its scope.",
+      "Ensure that the client switchports are assigned to the correct VLAN.",
+      "Verify the presence and correctness of the 'ip helper-address' configuration on the Layer 3 gateway interface if the DHCP server is in a different subnet.",
+      "Check physical and Layer 2 connectivity between the access switch and the DHCP server."
+    ],
+    "similar_cases": [
+      {
+        "case_id": "CASE-011",
+        "title": "DHCP failure",
+        "device": "SW-ACCESS-04",
+        "device_type": "Switch",
+        "issue": "Client not receiving IP address",
+        "severity": "Medium",
+        "status": "Open",
+        "source_ip": "0.0.0.0",
+        "destination_ip": "255.255.255.255",
+        "vlan_id": "30",
+        "interface": "GigabitEthernet0/15",
+        "protocol": "DHCP",
+        "description": "Client receives no DHCP address",
+        "similarity": 0.062
+      },
+      {
+        "case_id": "CASE-004",
+        "title": "Duplicate IP address",
+        "device": "SW-ACCESS-01",
+        "device_type": "Switch",
+        "issue": "Duplicate IP detected",
+        "severity": "High",
+        "status": "Open",
+        "source_ip": "192.168.1.25",
+        "destination_ip": "192.168.1.1",
+        "vlan_id": "10",
+        "interface": "GigabitEthernet0/5",
+        "protocol": "ARP",
+        "description": "Two devices appear to be using the same IP address",
+        "similarity": 0.056
+      },
+      {
+        "case_id": "CASE-026",
+        "title": "DHCP unavailable",
+        "device": "SW-ACCESS-10",
+        "device_type": "Switch",
+        "issue": "Client receives no IP",
+        "severity": "Medium",
+        "status": "Open",
+        "source_ip": "0.0.0.0",
+        "destination_ip": "255.255.255.255",
+        "vlan_id": "110",
+        "interface": "GigabitEthernet0/15",
+        "protocol": "DHCP",
+        "description": "DHCP requests receive no response",
+        "similarity": 0.056
+      },
+      {
+        "case_id": "NET-001",
+        "title": "VLAN 30 Server Unreachable",
+        "symptom": "PC gets an IP address but cannot reach the server",
+        "topology_note": "PC -> SW1 -> R1 -> Server",
+        "show_outputs": "show ip interface brief\\nG0/0 192.168.30.1 up up\\nshow ip route\\nC 192.168.30.0/24 is directly connected",
+        "expected_fault": "Inter-VLAN routing or ACL issue",
+        "osi_layer": "Layer 3/4",
+        "concept": "VLAN",
+        "severity": "High",
+        "similarity": 0.053
+      },
+      {
+        "case_id": "CASE-002",
+        "title": "Inter-VLAN routing failure",
+        "device": "RTR-01",
+        "device_type": "Router",
+        "issue": "Inter-VLAN communication failing",
+        "severity": "High",
+        "status": "Investigating",
+        "source_ip": "192.168.10.25",
+        "destination_ip": "192.168.20.25",
+        "vlan_id": "10",
+        "interface": "GigabitEthernet0/0",
+        "protocol": "ICMP",
+        "description": "Hosts in VLAN 10 cannot communicate with hosts in VLAN 20",
+        "similarity": 0.053
+      }
+    ],
+    "deterministic_findings": [],
+    "historical_case_analysis": [
+      "CASE-011 (DHCP failure) supports this analysis: clients in that case failed to receive a DHCP IP address, aligning closely with the current symptom of self-assigned 169.x.x.x addresses.",
+      "CASE-026 (DHCP unavailable) supports this analysis: clients received no IP because DHCP requests had no response, which directly triggers APIPA auto-configuration.",
+      "CASE-004 (Duplicate IP address) conflicts: in CASE-004, clients already possess valid static or leased IP addresses (192.168.1.x) rather than lacking an IP address.",
+      "NET-001 (VLAN 30 Server Unreachable) conflicts: the PC in NET-001 successfully receives an IP address but faces routing or ACL issues, whereas the current symptom is a failure to acquire any IP address.",
+      "CASE-002 (Inter-VLAN routing failure) conflicts/is unrelated: it addresses routing failures between active subnets (VLAN 10 and 20) with valid IPs, rather than a failure of the initial IP acquisition phase."
+    ],
+    "uncertainties": [
+      "No topology was provided, meaning the physical or logical path to the DHCP server is unknown.",
+      "No command output was provided, preventing verification of IP helper configurations, interface states, or DHCP pool utilization.",
+      "It is unknown whether the DHCP server is local to the VLAN or centralized across a router/gateway."
+    ],
+    "ai_analysis": {
+      "ai_available": true,
+      "category": "Infrastructure Services",
+      "root_cause": "DHCP server failure or reachability issue, resulting in clients assigning themselves APIPA addresses (169.254.0.0/16).",
+      "confidence": 0.35,
+      "osi_layer": "Layer 3",
+      "evidence": [
+        "Devices show a self-assigned IP address starting with 169, which indicates APIPA is active due to a lack of DHCP responses."
+      ],
+      "recommended_commands": [
+        "show ip dhcp binding",
+        "show ip dhcp conflict",
+        "show running-config interface <interface-id>",
+        "show running-config | include ip helper-address",
+        "show ip interface brief"
+      ],
+      "proposed_remediation": [
+        "Verify if the DHCP server process is running and has free addresses in its scope.",
+        "Ensure that the client switchports are assigned to the correct VLAN.",
+        "Verify the presence and correctness of the 'ip helper-address' configuration on the Layer 3 gateway interface if the DHCP server is in a different subnet.",
+        "Check physical and Layer 2 connectivity between the access switch and the DHCP server."
+      ],
+      "historical_case_analysis": [
+        "CASE-011 (DHCP failure) supports this analysis: clients in that case failed to receive a DHCP IP address, aligning closely with the current symptom of self-assigned 169.x.x.x addresses.",
+        "CASE-026 (DHCP unavailable) supports this analysis: clients received no IP because DHCP requests had no response, which directly triggers APIPA auto-configuration.",
+        "CASE-004 (Duplicate IP address) conflicts: in CASE-004, clients already possess valid static or leased IP addresses (192.168.1.x) rather than lacking an IP address.",
+        "NET-001 (VLAN 30 Server Unreachable) conflicts: the PC in NET-001 successfully receives an IP address but faces routing or ACL issues, whereas the current symptom is a failure to acquire any IP address.",
+        "CASE-002 (Inter-VLAN routing failure) conflicts/is unrelated: it addresses routing failures between active subnets (VLAN 10 and 20) with valid IPs, rather than a failure of the initial IP acquisition phase."
+      ],
+      "uncertainties": [
+        "No topology was provided, meaning the physical or logical path to the DHCP server is unknown.",
+        "No command output was provided, preventing verification of IP helper configurations, interface states, or DHCP pool utilization.",
+        "It is unknown whether the DHCP server is local to the VLAN or centralized across a router/gateway."
+      ],
+      "human_review_required": true
+    },
+    "gemini_input": {
+      "incident": {
+        "case_id": "CUSTOM",
+        "symptom": "IP Address Errors: Devices show a self-assigned IP address starting with 169, meaning the DHCP server failed",
+        "topology": "",
+        "command_output": "",
+        "device": "",
+        "device_type": "",
+        "severity": "Medium"
+      },
+      "deterministic_analysis": {
+        "matched": false,
+        "category": "Unknown",
+        "root_cause": null,
+        "confidence": 0.0,
+        "osi_layer": null,
+        "evidence": [],
+        "recommended_commands": [],
+        "proposed_remediation": []
+      },
+      "rule_engine_findings": [],
+      "similar_historical_cases": [
+        {
+          "case_id": "CASE-011",
+          "title": "DHCP failure",
+          "device": "SW-ACCESS-04",
+          "device_type": "Switch",
+          "issue": "Client not receiving IP address",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "0.0.0.0",
+          "destination_ip": "255.255.255.255",
+          "vlan_id": "30",
+          "interface": "GigabitEthernet0/15",
+          "protocol": "DHCP",
+          "description": "Client receives no DHCP address",
+          "similarity": 0.062
+        },
+        {
+          "case_id": "CASE-004",
+          "title": "Duplicate IP address",
+          "device": "SW-ACCESS-01",
+          "device_type": "Switch",
+          "issue": "Duplicate IP detected",
+          "severity": "High",
+          "status": "Open",
+          "source_ip": "192.168.1.25",
+          "destination_ip": "192.168.1.1",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/5",
+          "protocol": "ARP",
+          "description": "Two devices appear to be using the same IP address",
+          "similarity": 0.056
+        },
+        {
+          "case_id": "CASE-026",
+          "title": "DHCP unavailable",
+          "device": "SW-ACCESS-10",
+          "device_type": "Switch",
+          "issue": "Client receives no IP",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "0.0.0.0",
+          "destination_ip": "255.255.255.255",
+          "vlan_id": "110",
+          "interface": "GigabitEthernet0/15",
+          "protocol": "DHCP",
+          "description": "DHCP requests receive no response",
+          "similarity": 0.056
+        },
+        {
+          "case_id": "NET-001",
+          "title": "VLAN 30 Server Unreachable",
+          "symptom": "PC gets an IP address but cannot reach the server",
+          "topology_note": "PC -> SW1 -> R1 -> Server",
+          "show_outputs": "show ip interface brief\\nG0/0 192.168.30.1 up up\\nshow ip route\\nC 192.168.30.0/24 is directly connected",
+          "expected_fault": "Inter-VLAN routing or ACL issue",
+          "osi_layer": "Layer 3/4",
+          "concept": "VLAN",
+          "severity": "High",
+          "similarity": 0.053
+        },
+        {
+          "case_id": "CASE-002",
+          "title": "Inter-VLAN routing failure",
+          "device": "RTR-01",
+          "device_type": "Router",
+          "issue": "Inter-VLAN communication failing",
+          "severity": "High",
+          "status": "Investigating",
+          "source_ip": "192.168.10.25",
+          "destination_ip": "192.168.20.25",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/0",
+          "protocol": "ICMP",
+          "description": "Hosts in VLAN 10 cannot communicate with hosts in VLAN 20",
+          "similarity": 0.053
+        }
+      ],
+      "matched_test_cases": [
+        {
+          "case_id": "CASE-011",
+          "title": "DHCP failure",
+          "device": "SW-ACCESS-04",
+          "device_type": "Switch",
+          "issue": "Client not receiving IP address",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "0.0.0.0",
+          "destination_ip": "255.255.255.255",
+          "vlan_id": "30",
+          "interface": "GigabitEthernet0/15",
+          "protocol": "DHCP",
+          "description": "Client receives no DHCP address",
+          "similarity": 0.062
+        },
+        {
+          "case_id": "CASE-004",
+          "title": "Duplicate IP address",
+          "device": "SW-ACCESS-01",
+          "device_type": "Switch",
+          "issue": "Duplicate IP detected",
+          "severity": "High",
+          "status": "Open",
+          "source_ip": "192.168.1.25",
+          "destination_ip": "192.168.1.1",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/5",
+          "protocol": "ARP",
+          "description": "Two devices appear to be using the same IP address",
+          "similarity": 0.056
+        },
+        {
+          "case_id": "CASE-026",
+          "title": "DHCP unavailable",
+          "device": "SW-ACCESS-10",
+          "device_type": "Switch",
+          "issue": "Client receives no IP",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "0.0.0.0",
+          "destination_ip": "255.255.255.255",
+          "vlan_id": "110",
+          "interface": "GigabitEthernet0/15",
+          "protocol": "DHCP",
+          "description": "DHCP requests receive no response",
+          "similarity": 0.056
+        },
+        {
+          "case_id": "NET-001",
+          "title": "VLAN 30 Server Unreachable",
+          "symptom": "PC gets an IP address but cannot reach the server",
+          "topology_note": "PC -> SW1 -> R1 -> Server",
+          "show_outputs": "show ip interface brief\\nG0/0 192.168.30.1 up up\\nshow ip route\\nC 192.168.30.0/24 is directly connected",
+          "expected_fault": "Inter-VLAN routing or ACL issue",
+          "osi_layer": "Layer 3/4",
+          "concept": "VLAN",
+          "severity": "High",
+          "similarity": 0.053
+        },
+        {
+          "case_id": "CASE-002",
+          "title": "Inter-VLAN routing failure",
+          "device": "RTR-01",
+          "device_type": "Router",
+          "issue": "Inter-VLAN communication failing",
+          "severity": "High",
+          "status": "Investigating",
+          "source_ip": "192.168.10.25",
+          "destination_ip": "192.168.20.25",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/0",
+          "protocol": "ICMP",
+          "description": "Hosts in VLAN 10 cannot communicate with hosts in VLAN 20",
+          "similarity": 0.053
+        }
+      ]
+    },
+    "human_review_required": true,
+    "created_at": "2026-08-27T09:30:12.158742",
+    "responsible_ai": {
+      "rules_run_before_ai": true,
+      "historical_cases_used": true,
+      "ai_mediated_case_and_rules": true,
+      "human_review_required": true,
+      "automatic_configuration_change": false
+    }
+  },
+  {
+    "diagnosis_id": "DGN-DC4E2B44",
+    "case_id": "CUSTOM",
+    "status": "RESULT_READY",
+    "processing_status": "RULES_ONLY",
+    "category": "DHCP",
+    "root_cause": "Client receives no DHCP address",
+    "diagnosis": "Client receives no DHCP address",
+    "confidence": 0.0,
+    "confidence_percent": 0,
+    "osi_layer": null,
+    "evidence": [],
+    "more_evidence_required": true,
+    "recommended_commands": [],
+    "proposed_remediation": [],
+    "similar_cases": [
+      {
+        "case_id": "CASE-011",
+        "title": "DHCP failure",
+        "device": "SW-ACCESS-04",
+        "device_type": "Switch",
+        "issue": "Client not receiving IP address",
+        "severity": "Medium",
+        "status": "Open",
+        "source_ip": "0.0.0.0",
+        "destination_ip": "255.255.255.255",
+        "vlan_id": "30",
+        "interface": "GigabitEthernet0/15",
+        "protocol": "DHCP",
+        "description": "Client receives no DHCP address",
+        "similarity": 0.062
+      },
+      {
+        "case_id": "CASE-004",
+        "title": "Duplicate IP address",
+        "device": "SW-ACCESS-01",
+        "device_type": "Switch",
+        "issue": "Duplicate IP detected",
+        "severity": "High",
+        "status": "Open",
+        "source_ip": "192.168.1.25",
+        "destination_ip": "192.168.1.1",
+        "vlan_id": "10",
+        "interface": "GigabitEthernet0/5",
+        "protocol": "ARP",
+        "description": "Two devices appear to be using the same IP address",
+        "similarity": 0.056
+      },
+      {
+        "case_id": "CASE-026",
+        "title": "DHCP unavailable",
+        "device": "SW-ACCESS-10",
+        "device_type": "Switch",
+        "issue": "Client receives no IP",
+        "severity": "Medium",
+        "status": "Open",
+        "source_ip": "0.0.0.0",
+        "destination_ip": "255.255.255.255",
+        "vlan_id": "110",
+        "interface": "GigabitEthernet0/15",
+        "protocol": "DHCP",
+        "description": "DHCP requests receive no response",
+        "similarity": 0.056
+      },
+      {
+        "case_id": "NET-001",
+        "title": "VLAN 30 Server Unreachable",
+        "symptom": "PC gets an IP address but cannot reach the server",
+        "topology_note": "PC -> SW1 -> R1 -> Server",
+        "show_outputs": "show ip interface brief\\nG0/0 192.168.30.1 up up\\nshow ip route\\nC 192.168.30.0/24 is directly connected",
+        "expected_fault": "Inter-VLAN routing or ACL issue",
+        "osi_layer": "Layer 3/4",
+        "concept": "VLAN",
+        "severity": "High",
+        "similarity": 0.053
+      },
+      {
+        "case_id": "CASE-002",
+        "title": "Inter-VLAN routing failure",
+        "device": "RTR-01",
+        "device_type": "Router",
+        "issue": "Inter-VLAN communication failing",
+        "severity": "High",
+        "status": "Investigating",
+        "source_ip": "192.168.10.25",
+        "destination_ip": "192.168.20.25",
+        "vlan_id": "10",
+        "interface": "GigabitEthernet0/0",
+        "protocol": "ICMP",
+        "description": "Hosts in VLAN 10 cannot communicate with hosts in VLAN 20",
+        "similarity": 0.053
+      }
+    ],
+    "deterministic_findings": [],
+    "historical_case_analysis": [
+      "Matched historical case CASE-011: DHCP failure."
+    ],
+    "uncertainties": [
+      "AI diagnosis was unavailable: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "Fallback diagnosis is based on the most similar historical case."
+    ],
+    "ai_analysis": {
+      "ai_available": false,
+      "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "category": "DHCP",
+      "root_cause": "Client receives no DHCP address",
+      "confidence": 0.0,
+      "osi_layer": "",
+      "evidence": [],
+      "recommended_commands": [],
+      "proposed_remediation": [],
+      "historical_case_analysis": [
+        "Matched historical case CASE-011: DHCP failure."
+      ],
+      "uncertainties": [
+        "AI diagnosis was unavailable: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "Fallback diagnosis is based on the most similar historical case."
+      ],
+      "human_review_required": true
+    },
+    "gemini_input": {
+      "incident": {
+        "case_id": "CUSTOM",
+        "symptom": "IP Address Errors: Devices show a self-assigned IP address starting with 169, meaning the DHCP server failed",
+        "topology": "",
+        "command_output": "",
+        "device": "",
+        "device_type": "",
+        "severity": "Medium"
+      },
+      "deterministic_analysis": {
+        "matched": false,
+        "category": "Unknown",
+        "root_cause": null,
+        "confidence": 0.0,
+        "osi_layer": null,
+        "evidence": [],
+        "recommended_commands": [],
+        "proposed_remediation": []
+      },
+      "rule_engine_findings": [],
+      "similar_historical_cases": [
+        {
+          "case_id": "CASE-011",
+          "title": "DHCP failure",
+          "device": "SW-ACCESS-04",
+          "device_type": "Switch",
+          "issue": "Client not receiving IP address",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "0.0.0.0",
+          "destination_ip": "255.255.255.255",
+          "vlan_id": "30",
+          "interface": "GigabitEthernet0/15",
+          "protocol": "DHCP",
+          "description": "Client receives no DHCP address",
+          "similarity": 0.062
+        },
+        {
+          "case_id": "CASE-004",
+          "title": "Duplicate IP address",
+          "device": "SW-ACCESS-01",
+          "device_type": "Switch",
+          "issue": "Duplicate IP detected",
+          "severity": "High",
+          "status": "Open",
+          "source_ip": "192.168.1.25",
+          "destination_ip": "192.168.1.1",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/5",
+          "protocol": "ARP",
+          "description": "Two devices appear to be using the same IP address",
+          "similarity": 0.056
+        },
+        {
+          "case_id": "CASE-026",
+          "title": "DHCP unavailable",
+          "device": "SW-ACCESS-10",
+          "device_type": "Switch",
+          "issue": "Client receives no IP",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "0.0.0.0",
+          "destination_ip": "255.255.255.255",
+          "vlan_id": "110",
+          "interface": "GigabitEthernet0/15",
+          "protocol": "DHCP",
+          "description": "DHCP requests receive no response",
+          "similarity": 0.056
+        },
+        {
+          "case_id": "NET-001",
+          "title": "VLAN 30 Server Unreachable",
+          "symptom": "PC gets an IP address but cannot reach the server",
+          "topology_note": "PC -> SW1 -> R1 -> Server",
+          "show_outputs": "show ip interface brief\\nG0/0 192.168.30.1 up up\\nshow ip route\\nC 192.168.30.0/24 is directly connected",
+          "expected_fault": "Inter-VLAN routing or ACL issue",
+          "osi_layer": "Layer 3/4",
+          "concept": "VLAN",
+          "severity": "High",
+          "similarity": 0.053
+        },
+        {
+          "case_id": "CASE-002",
+          "title": "Inter-VLAN routing failure",
+          "device": "RTR-01",
+          "device_type": "Router",
+          "issue": "Inter-VLAN communication failing",
+          "severity": "High",
+          "status": "Investigating",
+          "source_ip": "192.168.10.25",
+          "destination_ip": "192.168.20.25",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/0",
+          "protocol": "ICMP",
+          "description": "Hosts in VLAN 10 cannot communicate with hosts in VLAN 20",
+          "similarity": 0.053
+        }
+      ],
+      "matched_test_cases": [
+        {
+          "case_id": "CASE-011",
+          "title": "DHCP failure",
+          "device": "SW-ACCESS-04",
+          "device_type": "Switch",
+          "issue": "Client not receiving IP address",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "0.0.0.0",
+          "destination_ip": "255.255.255.255",
+          "vlan_id": "30",
+          "interface": "GigabitEthernet0/15",
+          "protocol": "DHCP",
+          "description": "Client receives no DHCP address",
+          "similarity": 0.062
+        },
+        {
+          "case_id": "CASE-004",
+          "title": "Duplicate IP address",
+          "device": "SW-ACCESS-01",
+          "device_type": "Switch",
+          "issue": "Duplicate IP detected",
+          "severity": "High",
+          "status": "Open",
+          "source_ip": "192.168.1.25",
+          "destination_ip": "192.168.1.1",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/5",
+          "protocol": "ARP",
+          "description": "Two devices appear to be using the same IP address",
+          "similarity": 0.056
+        },
+        {
+          "case_id": "CASE-026",
+          "title": "DHCP unavailable",
+          "device": "SW-ACCESS-10",
+          "device_type": "Switch",
+          "issue": "Client receives no IP",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "0.0.0.0",
+          "destination_ip": "255.255.255.255",
+          "vlan_id": "110",
+          "interface": "GigabitEthernet0/15",
+          "protocol": "DHCP",
+          "description": "DHCP requests receive no response",
+          "similarity": 0.056
+        },
+        {
+          "case_id": "NET-001",
+          "title": "VLAN 30 Server Unreachable",
+          "symptom": "PC gets an IP address but cannot reach the server",
+          "topology_note": "PC -> SW1 -> R1 -> Server",
+          "show_outputs": "show ip interface brief\\nG0/0 192.168.30.1 up up\\nshow ip route\\nC 192.168.30.0/24 is directly connected",
+          "expected_fault": "Inter-VLAN routing or ACL issue",
+          "osi_layer": "Layer 3/4",
+          "concept": "VLAN",
+          "severity": "High",
+          "similarity": 0.053
+        },
+        {
+          "case_id": "CASE-002",
+          "title": "Inter-VLAN routing failure",
+          "device": "RTR-01",
+          "device_type": "Router",
+          "issue": "Inter-VLAN communication failing",
+          "severity": "High",
+          "status": "Investigating",
+          "source_ip": "192.168.10.25",
+          "destination_ip": "192.168.20.25",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/0",
+          "protocol": "ICMP",
+          "description": "Hosts in VLAN 10 cannot communicate with hosts in VLAN 20",
+          "similarity": 0.053
+        }
+      ]
+    },
+    "human_review_required": true,
+    "created_at": "2026-08-27T09:31:39.432771",
+    "responsible_ai": {
+      "rules_run_before_ai": true,
+      "historical_cases_used": true,
+      "ai_mediated_case_and_rules": true,
+      "human_review_required": true,
+      "automatic_configuration_change": false
+    }
+  },
+  {
+    "diagnosis_id": "DGN-9D34DF6B",
+    "case_id": "CUSTOM",
+    "status": "RESULT_READY",
+    "processing_status": "RULES_ONLY",
+    "category": "routing",
+    "root_cause": "Default gateway reachability is failing.",
+    "diagnosis": "Default gateway reachability is failing.",
+    "confidence": 0.0,
+    "confidence_percent": 0,
+    "osi_layer": null,
+    "evidence": [
+      "VLAN 20 is referenced by the incident.",
+      "Incident contains gateway reachability symptoms.",
+      "192.168.20.10, 192.168.20.1",
+      "VLAN 20 was detected in supplied evidence."
+    ],
+    "more_evidence_required": true,
+    "recommended_commands": [
+      "Verify the VLAN gateway interface is up.",
+      "Verify the host is assigned to the expected VLAN.",
+      "Verify the gateway IP and subnet mask.",
+      "Verify the host IP, subnet mask and default gateway.",
+      "Check for duplicate or incorrect addressing.",
+      "Verify VLAN 20 exists.",
+      "Verify the affected access ports belong to VLAN 20.",
+      "Verify VLAN 20 is permitted across required trunks."
+    ],
+    "proposed_remediation": [
+      "Verify the VLAN gateway interface is up.",
+      "Verify the host is assigned to the expected VLAN.",
+      "Verify the gateway IP and subnet mask."
+    ],
+    "similar_cases": [
+      {
+        "case_id": "CASE-001",
+        "title": "VLAN connectivity failure",
+        "device": "SW-CORE-01",
+        "device_type": "Switch",
+        "issue": "VLAN users cannot reach gateway",
+        "severity": "High",
+        "status": "Open",
+        "source_ip": "192.168.20.15",
+        "destination_ip": "192.168.20.1",
+        "vlan_id": "20",
+        "interface": "GigabitEthernet0/1",
+        "protocol": "ICMP",
+        "description": "Users connected to VLAN 20 cannot ping the default gateway",
+        "similarity": 0.152
+      },
+      {
+        "case_id": "CASE-007",
+        "title": "VLAN mismatch",
+        "device": "SW-ACCESS-03",
+        "device_type": "Switch",
+        "issue": "Device placed in wrong VLAN",
+        "severity": "High",
+        "status": "Investigating",
+        "source_ip": "192.168.30.15",
+        "destination_ip": "192.168.30.1",
+        "vlan_id": "20",
+        "interface": "GigabitEthernet0/10",
+        "protocol": "802.1Q",
+        "description": "Access port is configured for VLAN 20 while endpoint should be in VLAN 30",
+        "similarity": 0.071
+      },
+      {
+        "case_id": "CASE-005",
+        "title": "Incorrect subnet mask",
+        "device": "PC-102",
+        "device_type": "Host",
+        "issue": "Host cannot reach remote subnet",
+        "severity": "Medium",
+        "status": "Open",
+        "source_ip": "192.168.10.50",
+        "destination_ip": "192.168.20.50",
+        "vlan_id": "10",
+        "interface": "Ethernet0",
+        "protocol": "ICMP",
+        "description": "Host has an incorrect subnet mask configured",
+        "similarity": 0.061
+      },
+      {
+        "case_id": "CASE-024",
+        "title": "Interface administratively down",
+        "device": "SW-ACCESS-08",
+        "device_type": "Switch",
+        "issue": "Endpoint has no connectivity",
+        "severity": "Critical",
+        "status": "Open",
+        "source_ip": "192.168.90.20",
+        "destination_ip": "192.168.90.1",
+        "vlan_id": "90",
+        "interface": "GigabitEthernet0/8",
+        "protocol": "Ethernet",
+        "description": "Interface is administratively shut down",
+        "similarity": 0.061
+      },
+      {
+        "case_id": "CASE-002",
+        "title": "Inter-VLAN routing failure",
+        "device": "RTR-01",
+        "device_type": "Router",
+        "issue": "Inter-VLAN communication failing",
+        "severity": "High",
+        "status": "Investigating",
+        "source_ip": "192.168.10.25",
+        "destination_ip": "192.168.20.25",
+        "vlan_id": "10",
+        "interface": "GigabitEthernet0/0",
+        "protocol": "ICMP",
+        "description": "Hosts in VLAN 10 cannot communicate with hosts in VLAN 20",
+        "similarity": 0.06
+      }
+    ],
+    "deterministic_findings": [
+      {
+        "rule": "default_gateway_reachability",
+        "severity": "high",
+        "finding": "Default gateway reachability is failing.",
+        "evidence": "Incident contains gateway reachability symptoms.",
+        "recommendation": [
+          "Verify the VLAN gateway interface is up.",
+          "Verify the host is assigned to the expected VLAN.",
+          "Verify the gateway IP and subnet mask."
+        ],
+        "category": "routing"
+      },
+      {
+        "rule": "ip_addresses_detected",
+        "severity": "info",
+        "finding": "IP addressing information was detected.",
+        "evidence": "192.168.20.10, 192.168.20.1",
+        "recommendation": [
+          "Verify the host IP, subnet mask and default gateway.",
+          "Check for duplicate or incorrect addressing."
+        ],
+        "category": "ip"
+      },
+      {
+        "rule": "vlan_present",
+        "severity": "info",
+        "finding": "Incident contains VLAN 20 information.",
+        "evidence": "VLAN 20 was detected in supplied evidence.",
+        "recommendation": [
+          "Verify VLAN 20 exists.",
+          "Verify the affected access ports belong to VLAN 20.",
+          "Verify VLAN 20 is permitted across required trunks."
+        ],
+        "category": "vlan"
+      }
+    ],
+    "historical_case_analysis": [],
+    "uncertainties": [
+      "AI diagnosis was unavailable: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+    ],
+    "ai_analysis": {
+      "ai_available": false,
+      "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "category": "routing",
+      "root_cause": "Default gateway reachability is failing.",
+      "confidence": 0.0,
+      "osi_layer": "",
+      "evidence": [
+        "Incident contains gateway reachability symptoms."
+      ],
+      "recommended_commands": [],
+      "proposed_remediation": [
+        "Verify the VLAN gateway interface is up.",
+        "Verify the host is assigned to the expected VLAN.",
+        "Verify the gateway IP and subnet mask."
+      ],
+      "historical_case_analysis": [],
+      "uncertainties": [
+        "AI diagnosis was unavailable: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+      ],
+      "human_review_required": true
+    },
+    "gemini_input": {
+      "incident": {
+        "case_id": "CUSTOM",
+        "symptom": "PC0 cannot reach the network gateway. The PC is configured for VLAN 20, but connectivity is failing.",
+        "topology": "PC0 → SW1 → R1. PC0: 192.168.20.10/24. Default gateway: 192.168.20.1. SW1 has VLAN 20 named USERS.",
+        "command_output": "SW1#show vlan brief\nVLAN 20 USERS active with no ports assigned.\n\nSW1#show interfaces trunk\nNo trunk interfaces are displayed.\n\nPC0 ping 192.168.20.1\nPackets: Sent = 4, Received = 0, Lost = 4 (100% loss).",
+        "device": "SW1",
+        "device_type": "Switch",
+        "severity": "High"
+      },
+      "deterministic_analysis": {
+        "matched": false,
+        "category": "Unknown",
+        "root_cause": null,
+        "confidence": 0.0,
+        "osi_layer": null,
+        "evidence": [
+          "VLAN 20 is referenced by the incident."
+        ],
+        "recommended_commands": [],
+        "proposed_remediation": []
+      },
+      "rule_engine_findings": [
+        {
+          "rule": "default_gateway_reachability",
+          "severity": "high",
+          "finding": "Default gateway reachability is failing.",
+          "evidence": "Incident contains gateway reachability symptoms.",
+          "recommendation": [
+            "Verify the VLAN gateway interface is up.",
+            "Verify the host is assigned to the expected VLAN.",
+            "Verify the gateway IP and subnet mask."
+          ],
+          "category": "routing"
+        },
+        {
+          "rule": "ip_addresses_detected",
+          "severity": "info",
+          "finding": "IP addressing information was detected.",
+          "evidence": "192.168.20.10, 192.168.20.1",
+          "recommendation": [
+            "Verify the host IP, subnet mask and default gateway.",
+            "Check for duplicate or incorrect addressing."
+          ],
+          "category": "ip"
+        },
+        {
+          "rule": "vlan_present",
+          "severity": "info",
+          "finding": "Incident contains VLAN 20 information.",
+          "evidence": "VLAN 20 was detected in supplied evidence.",
+          "recommendation": [
+            "Verify VLAN 20 exists.",
+            "Verify the affected access ports belong to VLAN 20.",
+            "Verify VLAN 20 is permitted across required trunks."
+          ],
+          "category": "vlan"
+        }
+      ],
+      "similar_historical_cases": [
+        {
+          "case_id": "CASE-001",
+          "title": "VLAN connectivity failure",
+          "device": "SW-CORE-01",
+          "device_type": "Switch",
+          "issue": "VLAN users cannot reach gateway",
+          "severity": "High",
+          "status": "Open",
+          "source_ip": "192.168.20.15",
+          "destination_ip": "192.168.20.1",
+          "vlan_id": "20",
+          "interface": "GigabitEthernet0/1",
+          "protocol": "ICMP",
+          "description": "Users connected to VLAN 20 cannot ping the default gateway",
+          "similarity": 0.152
+        },
+        {
+          "case_id": "CASE-007",
+          "title": "VLAN mismatch",
+          "device": "SW-ACCESS-03",
+          "device_type": "Switch",
+          "issue": "Device placed in wrong VLAN",
+          "severity": "High",
+          "status": "Investigating",
+          "source_ip": "192.168.30.15",
+          "destination_ip": "192.168.30.1",
+          "vlan_id": "20",
+          "interface": "GigabitEthernet0/10",
+          "protocol": "802.1Q",
+          "description": "Access port is configured for VLAN 20 while endpoint should be in VLAN 30",
+          "similarity": 0.071
+        },
+        {
+          "case_id": "CASE-005",
+          "title": "Incorrect subnet mask",
+          "device": "PC-102",
+          "device_type": "Host",
+          "issue": "Host cannot reach remote subnet",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "192.168.10.50",
+          "destination_ip": "192.168.20.50",
+          "vlan_id": "10",
+          "interface": "Ethernet0",
+          "protocol": "ICMP",
+          "description": "Host has an incorrect subnet mask configured",
+          "similarity": 0.061
+        },
+        {
+          "case_id": "CASE-024",
+          "title": "Interface administratively down",
+          "device": "SW-ACCESS-08",
+          "device_type": "Switch",
+          "issue": "Endpoint has no connectivity",
+          "severity": "Critical",
+          "status": "Open",
+          "source_ip": "192.168.90.20",
+          "destination_ip": "192.168.90.1",
+          "vlan_id": "90",
+          "interface": "GigabitEthernet0/8",
+          "protocol": "Ethernet",
+          "description": "Interface is administratively shut down",
+          "similarity": 0.061
+        },
+        {
+          "case_id": "CASE-002",
+          "title": "Inter-VLAN routing failure",
+          "device": "RTR-01",
+          "device_type": "Router",
+          "issue": "Inter-VLAN communication failing",
+          "severity": "High",
+          "status": "Investigating",
+          "source_ip": "192.168.10.25",
+          "destination_ip": "192.168.20.25",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/0",
+          "protocol": "ICMP",
+          "description": "Hosts in VLAN 10 cannot communicate with hosts in VLAN 20",
+          "similarity": 0.06
+        }
+      ],
+      "matched_test_cases": [
+        {
+          "case_id": "CASE-001",
+          "title": "VLAN connectivity failure",
+          "device": "SW-CORE-01",
+          "device_type": "Switch",
+          "issue": "VLAN users cannot reach gateway",
+          "severity": "High",
+          "status": "Open",
+          "source_ip": "192.168.20.15",
+          "destination_ip": "192.168.20.1",
+          "vlan_id": "20",
+          "interface": "GigabitEthernet0/1",
+          "protocol": "ICMP",
+          "description": "Users connected to VLAN 20 cannot ping the default gateway",
+          "similarity": 0.152
+        },
+        {
+          "case_id": "CASE-007",
+          "title": "VLAN mismatch",
+          "device": "SW-ACCESS-03",
+          "device_type": "Switch",
+          "issue": "Device placed in wrong VLAN",
+          "severity": "High",
+          "status": "Investigating",
+          "source_ip": "192.168.30.15",
+          "destination_ip": "192.168.30.1",
+          "vlan_id": "20",
+          "interface": "GigabitEthernet0/10",
+          "protocol": "802.1Q",
+          "description": "Access port is configured for VLAN 20 while endpoint should be in VLAN 30",
+          "similarity": 0.071
+        },
+        {
+          "case_id": "CASE-005",
+          "title": "Incorrect subnet mask",
+          "device": "PC-102",
+          "device_type": "Host",
+          "issue": "Host cannot reach remote subnet",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "192.168.10.50",
+          "destination_ip": "192.168.20.50",
+          "vlan_id": "10",
+          "interface": "Ethernet0",
+          "protocol": "ICMP",
+          "description": "Host has an incorrect subnet mask configured",
+          "similarity": 0.061
+        },
+        {
+          "case_id": "CASE-024",
+          "title": "Interface administratively down",
+          "device": "SW-ACCESS-08",
+          "device_type": "Switch",
+          "issue": "Endpoint has no connectivity",
+          "severity": "Critical",
+          "status": "Open",
+          "source_ip": "192.168.90.20",
+          "destination_ip": "192.168.90.1",
+          "vlan_id": "90",
+          "interface": "GigabitEthernet0/8",
+          "protocol": "Ethernet",
+          "description": "Interface is administratively shut down",
+          "similarity": 0.061
+        },
+        {
+          "case_id": "CASE-002",
+          "title": "Inter-VLAN routing failure",
+          "device": "RTR-01",
+          "device_type": "Router",
+          "issue": "Inter-VLAN communication failing",
+          "severity": "High",
+          "status": "Investigating",
+          "source_ip": "192.168.10.25",
+          "destination_ip": "192.168.20.25",
+          "vlan_id": "10",
+          "interface": "GigabitEthernet0/0",
+          "protocol": "ICMP",
+          "description": "Hosts in VLAN 10 cannot communicate with hosts in VLAN 20",
+          "similarity": 0.06
+        }
+      ]
+    },
+    "human_review_required": true,
+    "created_at": "2026-08-27T20:08:13.621725",
+    "responsible_ai": {
+      "rules_run_before_ai": true,
+      "historical_cases_used": true,
+      "ai_mediated_case_and_rules": true,
+      "human_review_required": true,
+      "automatic_configuration_change": false
+    }
+  },
+  {
+    "diagnosis_id": "DGN-A51414AA",
+    "case_id": "CUSTOM",
+    "status": "RESULT_READY",
+    "processing_status": "AI_COMPLETE",
+    "category": "VLAN",
+    "root_cause": "Likely due to the switch access port connecting to PC0 not being assigned to VLAN 20 (it remains in VLAN 1), combined with a lack of trunking configuration to the gateway router (R1).",
+    "diagnosis": "Likely due to the switch access port connecting to PC0 not being assigned to VLAN 20 (it remains in VLAN 1), combined with a lack of trunking configuration to the gateway router (R1).",
+    "confidence": 0.85,
+    "confidence_percent": 85,
+    "osi_layer": "Layer 2",
+    "evidence": [
+      "VLAN 20 is referenced by the incident.",
+      "Incident contains gateway reachability symptoms.",
+      "192.168.20.10, 192.168.20.1",
+      "VLAN 20 was detected in supplied evidence.",
+      "The SW1#show vlan brief output shows VLAN 20 is active but has no switch ports assigned to it.",
+      "Active ports such as Fa0/1, Fa0/2, and Fa0/3 remain assigned to the default VLAN 1.",
+      "SW1#show interfaces trunk returned no output, indicating that no trunk ports are active to transport VLAN 20 traffic to R1.",
+      "Ping from PC0 to its default gateway 192.168.20.1 failed completely with 100% packet loss."
+    ],
+    "more_evidence_required": false,
+    "recommended_commands": [
+      "show mac address-table",
+      "show interfaces status",
+      "show running-config interface <interface_to_PC0>",
+      "show running-config interface <interface_to_R1>",
+      "Verify the VLAN gateway interface is up.",
+      "Verify the host is assigned to the expected VLAN.",
+      "Verify the gateway IP and subnet mask.",
+      "Verify the host IP, subnet mask and default gateway.",
+      "Check for duplicate or incorrect addressing.",
+      "Verify VLAN 20 exists.",
+      "Verify the affected access ports belong to VLAN 20.",
+      "Verify VLAN 20 is permitted across required trunks."
+    ],
+    "proposed_remediation": [
+      "Identify the switch port connected to PC0 and configure it as an access port in VLAN 20 using 'switchport mode access' and 'switchport access vlan 20'.",
+      "Configure the interface connecting SW1 to R1 as a trunk link ('switchport mode trunk') and verify that VLAN 20 is allowed."
+    ],
+    "similar_cases": [
+      {
+        "case_id": "CASE-001",
+        "title": "VLAN connectivity failure",
+        "device": "SW-CORE-01",
+        "device_type": "Switch",
+        "issue": "VLAN users cannot reach gateway",
+        "severity": "High",
+        "status": "Open",
+        "source_ip": "192.168.20.15",
+        "destination_ip": "192.168.20.1",
+        "vlan_id": "20",
+        "interface": "GigabitEthernet0/1",
+        "protocol": "ICMP",
+        "description": "Users connected to VLAN 20 cannot ping the default gateway",
+        "similarity": 0.123
+      },
+      {
+        "case_id": "CASE-007",
+        "title": "VLAN mismatch",
+        "device": "SW-ACCESS-03",
+        "device_type": "Switch",
+        "issue": "Device placed in wrong VLAN",
+        "severity": "High",
+        "status": "Investigating",
+        "source_ip": "192.168.30.15",
+        "destination_ip": "192.168.30.1",
+        "vlan_id": "20",
+        "interface": "GigabitEthernet0/10",
+        "protocol": "802.1Q",
+        "description": "Access port is configured for VLAN 20 while endpoint should be in VLAN 30",
+        "similarity": 0.06
+      },
+      {
+        "case_id": "CASE-008",
+        "title": "Trunk configuration failure",
+        "device": "SW-CORE-01",
+        "device_type": "Switch",
+        "issue": "VLAN traffic not passing trunk",
+        "severity": "High",
+        "status": "Open",
+        "source_ip": "192.168.20.10",
+        "destination_ip": "192.168.20.1",
+        "vlan_id": "",
+        "interface": "GigabitEthernet0/2",
+        "protocol": "802.1Q",
+        "description": "VLAN 20 traffic is not allowed across the trunk",
+        "similarity": 0.049
+      },
+      {
+        "case_id": "CASE-006",
+        "title": "Missing default gateway",
+        "device": "PC-103",
+        "device_type": "Host",
+        "issue": "External network unreachable",
+        "severity": "Medium",
+        "status": "Open",
+        "source_ip": "192.168.10.51",
+        "destination_ip": "8.8.8.8",
+        "vlan_id": "10",
+        "interface": "Ethernet0",
+        "protocol": "ICMP",
+        "description": "Host can communicate locally but cannot reach external networks",
+        "similarity": 0.048
+      },
+      {
+        "case_id": "CASE-012",
+        "title": "DNS resolution failure",
+        "device": "PC-110",
+        "device_type": "Host",
+        "issue": "Domain names cannot be resolved",
+        "severity": "Medium",
+        "status": "Open",
+        "source_ip": "192.168.30.20",
+        "destination_ip": "8.8.8.8",
+        "vlan_id": "30",
+        "interface": "Ethernet0",
+        "protocol": "DNS",
+        "description": "Network connectivity works but DNS queries fail",
+        "similarity": 0.048
+      }
+    ],
+    "deterministic_findings": [
+      {
+        "rule": "default_gateway_reachability",
+        "severity": "high",
+        "finding": "Default gateway reachability is failing.",
+        "evidence": "Incident contains gateway reachability symptoms.",
+        "recommendation": [
+          "Verify the VLAN gateway interface is up.",
+          "Verify the host is assigned to the expected VLAN.",
+          "Verify the gateway IP and subnet mask."
+        ],
+        "category": "routing"
+      },
+      {
+        "rule": "ip_addresses_detected",
+        "severity": "info",
+        "finding": "IP addressing information was detected.",
+        "evidence": "192.168.20.10, 192.168.20.1",
+        "recommendation": [
+          "Verify the host IP, subnet mask and default gateway.",
+          "Check for duplicate or incorrect addressing."
+        ],
+        "category": "ip"
+      },
+      {
+        "rule": "vlan_present",
+        "severity": "info",
+        "finding": "Incident contains VLAN 20 information.",
+        "evidence": "VLAN 20 was detected in supplied evidence.",
+        "recommendation": [
+          "Verify VLAN 20 exists.",
+          "Verify the affected access ports belong to VLAN 20.",
+          "Verify VLAN 20 is permitted across required trunks."
+        ],
+        "category": "vlan"
+      }
+    ],
+    "historical_case_analysis": [
+      "{\"case_id\": \"CASE-001\", \"relationship\": \"partially_supports\", \"analysis\": \"This case also involves VLAN 20 users unable to reach their gateway, which is highly relevant, although the specific port assignment failure was not explicitly compared.\"}",
+      "{\"case_id\": \"CASE-007\", \"relationship\": \"supports\", \"analysis\": \"This case involves a device mismatch on VLAN assignment. In our current case, PC0 is configured for VLAN 20 but its switch port remains in VLAN 1.\"}",
+      "{\"case_id\": \"CASE-008\", \"relationship\": \"supports\", \"analysis\": \"This case describes VLAN traffic not passing a trunk, consistent with the empty 'show interfaces trunk' output observed on SW1.\"}",
+      "{\"case_id\": \"CASE-006\", \"relationship\": \"unrelated\", \"analysis\": \"This case concerns a missing default gateway for reaching external networks, whereas our issue is complete lack of local gateway reachability within the same subnet.\"}",
+      "{\"case_id\": \"CASE-012\", \"relationship\": \"unrelated\", \"analysis\": \"This historical case is focused on DNS resolution failure, which is an application/Layer 7 issue, whereas our symptom is basic Layer 3 (ICMP) reachability failure.\"}"
+    ],
+    "uncertainties": [
+      "The exact switch port to which PC0 is physically connected is not identified in the provided outputs.",
+      "The status and configuration of the router (R1) interface connecting to SW1 are currently unknown."
+    ],
+    "ai_analysis": {
+      "ai_available": true,
+      "category": "VLAN",
+      "root_cause": "Likely due to the switch access port connecting to PC0 not being assigned to VLAN 20 (it remains in VLAN 1), combined with a lack of trunking configuration to the gateway router (R1).",
+      "confidence": 0.85,
+      "osi_layer": "Layer 2",
+      "evidence": [
+        "The SW1#show vlan brief output shows VLAN 20 is active but has no switch ports assigned to it.",
+        "Active ports such as Fa0/1, Fa0/2, and Fa0/3 remain assigned to the default VLAN 1.",
+        "SW1#show interfaces trunk returned no output, indicating that no trunk ports are active to transport VLAN 20 traffic to R1.",
+        "Ping from PC0 to its default gateway 192.168.20.1 failed completely with 100% packet loss."
+      ],
+      "recommended_commands": [
+        "show mac address-table",
+        "show interfaces status",
+        "show running-config interface <interface_to_PC0>",
+        "show running-config interface <interface_to_R1>"
+      ],
+      "proposed_remediation": [
+        "Identify the switch port connected to PC0 and configure it as an access port in VLAN 20 using 'switchport mode access' and 'switchport access vlan 20'.",
+        "Configure the interface connecting SW1 to R1 as a trunk link ('switchport mode trunk') and verify that VLAN 20 is allowed."
+      ],
+      "historical_case_analysis": [
+        "{\"case_id\": \"CASE-001\", \"relationship\": \"partially_supports\", \"analysis\": \"This case also involves VLAN 20 users unable to reach their gateway, which is highly relevant, although the specific port assignment failure was not explicitly compared.\"}",
+        "{\"case_id\": \"CASE-007\", \"relationship\": \"supports\", \"analysis\": \"This case involves a device mismatch on VLAN assignment. In our current case, PC0 is configured for VLAN 20 but its switch port remains in VLAN 1.\"}",
+        "{\"case_id\": \"CASE-008\", \"relationship\": \"supports\", \"analysis\": \"This case describes VLAN traffic not passing a trunk, consistent with the empty 'show interfaces trunk' output observed on SW1.\"}",
+        "{\"case_id\": \"CASE-006\", \"relationship\": \"unrelated\", \"analysis\": \"This case concerns a missing default gateway for reaching external networks, whereas our issue is complete lack of local gateway reachability within the same subnet.\"}",
+        "{\"case_id\": \"CASE-012\", \"relationship\": \"unrelated\", \"analysis\": \"This historical case is focused on DNS resolution failure, which is an application/Layer 7 issue, whereas our symptom is basic Layer 3 (ICMP) reachability failure.\"}"
+      ],
+      "uncertainties": [
+        "The exact switch port to which PC0 is physically connected is not identified in the provided outputs.",
+        "The status and configuration of the router (R1) interface connecting to SW1 are currently unknown."
+      ],
+      "human_review_required": true
+    },
+    "gemini_input": {
+      "incident": {
+        "case_id": "CUSTOM",
+        "symptom": "PC0 cannot reach the network gateway. The PC is configured for VLAN 20, but connectivity is fail",
+        "topology": "PC0 → SW1 → R1\n\nPC0:\n192.168.20.10/24\n\nDefault Gateway:\n192.168.20.1\n\nSwitch:\nVLAN 20 = USERS",
+        "command_output": "SW1#show vlan brief\n\nVLAN Name                             Status    Ports\n---- -------------------------------- --------- -------------------------------\n1    default                          active    Fa0/1, Fa0/2, Fa0/3, ...\n20   USERS                            active\n1002 fddi-default                     active\n1003 token-ring-default               active\n1004 fddinet-default                  active\n1005 trnet-default                    active\n\nSW1#show interfaces trunk\n\nSW1#\nPC0 ping 192.168.20.1\n\nPackets: Sent = 4, Received = 0, Lost = 4\n100% packet loss",
+        "device": "",
+        "device_type": "",
+        "severity": "Medium"
+      },
+      "deterministic_analysis": {
+        "matched": false,
+        "category": "Unknown",
+        "root_cause": null,
+        "confidence": 0.0,
+        "osi_layer": null,
+        "evidence": [
+          "VLAN 20 is referenced by the incident."
+        ],
+        "recommended_commands": [],
+        "proposed_remediation": []
+      },
+      "rule_engine_findings": [
+        {
+          "rule": "default_gateway_reachability",
+          "severity": "high",
+          "finding": "Default gateway reachability is failing.",
+          "evidence": "Incident contains gateway reachability symptoms.",
+          "recommendation": [
+            "Verify the VLAN gateway interface is up.",
+            "Verify the host is assigned to the expected VLAN.",
+            "Verify the gateway IP and subnet mask."
+          ],
+          "category": "routing"
+        },
+        {
+          "rule": "ip_addresses_detected",
+          "severity": "info",
+          "finding": "IP addressing information was detected.",
+          "evidence": "192.168.20.10, 192.168.20.1",
+          "recommendation": [
+            "Verify the host IP, subnet mask and default gateway.",
+            "Check for duplicate or incorrect addressing."
+          ],
+          "category": "ip"
+        },
+        {
+          "rule": "vlan_present",
+          "severity": "info",
+          "finding": "Incident contains VLAN 20 information.",
+          "evidence": "VLAN 20 was detected in supplied evidence.",
+          "recommendation": [
+            "Verify VLAN 20 exists.",
+            "Verify the affected access ports belong to VLAN 20.",
+            "Verify VLAN 20 is permitted across required trunks."
+          ],
+          "category": "vlan"
+        }
+      ],
+      "similar_historical_cases": [
+        {
+          "case_id": "CASE-001",
+          "title": "VLAN connectivity failure",
+          "device": "SW-CORE-01",
+          "device_type": "Switch",
+          "issue": "VLAN users cannot reach gateway",
+          "severity": "High",
+          "status": "Open",
+          "source_ip": "192.168.20.15",
+          "destination_ip": "192.168.20.1",
+          "vlan_id": "20",
+          "interface": "GigabitEthernet0/1",
+          "protocol": "ICMP",
+          "description": "Users connected to VLAN 20 cannot ping the default gateway",
+          "similarity": 0.123
+        },
+        {
+          "case_id": "CASE-007",
+          "title": "VLAN mismatch",
+          "device": "SW-ACCESS-03",
+          "device_type": "Switch",
+          "issue": "Device placed in wrong VLAN",
+          "severity": "High",
+          "status": "Investigating",
+          "source_ip": "192.168.30.15",
+          "destination_ip": "192.168.30.1",
+          "vlan_id": "20",
+          "interface": "GigabitEthernet0/10",
+          "protocol": "802.1Q",
+          "description": "Access port is configured for VLAN 20 while endpoint should be in VLAN 30",
+          "similarity": 0.06
+        },
+        {
+          "case_id": "CASE-008",
+          "title": "Trunk configuration failure",
+          "device": "SW-CORE-01",
+          "device_type": "Switch",
+          "issue": "VLAN traffic not passing trunk",
+          "severity": "High",
+          "status": "Open",
+          "source_ip": "192.168.20.10",
+          "destination_ip": "192.168.20.1",
+          "vlan_id": "",
+          "interface": "GigabitEthernet0/2",
+          "protocol": "802.1Q",
+          "description": "VLAN 20 traffic is not allowed across the trunk",
+          "similarity": 0.049
+        },
+        {
+          "case_id": "CASE-006",
+          "title": "Missing default gateway",
+          "device": "PC-103",
+          "device_type": "Host",
+          "issue": "External network unreachable",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "192.168.10.51",
+          "destination_ip": "8.8.8.8",
+          "vlan_id": "10",
+          "interface": "Ethernet0",
+          "protocol": "ICMP",
+          "description": "Host can communicate locally but cannot reach external networks",
+          "similarity": 0.048
+        },
+        {
+          "case_id": "CASE-012",
+          "title": "DNS resolution failure",
+          "device": "PC-110",
+          "device_type": "Host",
+          "issue": "Domain names cannot be resolved",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "192.168.30.20",
+          "destination_ip": "8.8.8.8",
+          "vlan_id": "30",
+          "interface": "Ethernet0",
+          "protocol": "DNS",
+          "description": "Network connectivity works but DNS queries fail",
+          "similarity": 0.048
+        }
+      ],
+      "matched_test_cases": [
+        {
+          "case_id": "CASE-001",
+          "title": "VLAN connectivity failure",
+          "device": "SW-CORE-01",
+          "device_type": "Switch",
+          "issue": "VLAN users cannot reach gateway",
+          "severity": "High",
+          "status": "Open",
+          "source_ip": "192.168.20.15",
+          "destination_ip": "192.168.20.1",
+          "vlan_id": "20",
+          "interface": "GigabitEthernet0/1",
+          "protocol": "ICMP",
+          "description": "Users connected to VLAN 20 cannot ping the default gateway",
+          "similarity": 0.123
+        },
+        {
+          "case_id": "CASE-007",
+          "title": "VLAN mismatch",
+          "device": "SW-ACCESS-03",
+          "device_type": "Switch",
+          "issue": "Device placed in wrong VLAN",
+          "severity": "High",
+          "status": "Investigating",
+          "source_ip": "192.168.30.15",
+          "destination_ip": "192.168.30.1",
+          "vlan_id": "20",
+          "interface": "GigabitEthernet0/10",
+          "protocol": "802.1Q",
+          "description": "Access port is configured for VLAN 20 while endpoint should be in VLAN 30",
+          "similarity": 0.06
+        },
+        {
+          "case_id": "CASE-008",
+          "title": "Trunk configuration failure",
+          "device": "SW-CORE-01",
+          "device_type": "Switch",
+          "issue": "VLAN traffic not passing trunk",
+          "severity": "High",
+          "status": "Open",
+          "source_ip": "192.168.20.10",
+          "destination_ip": "192.168.20.1",
+          "vlan_id": "",
+          "interface": "GigabitEthernet0/2",
+          "protocol": "802.1Q",
+          "description": "VLAN 20 traffic is not allowed across the trunk",
+          "similarity": 0.049
+        },
+        {
+          "case_id": "CASE-006",
+          "title": "Missing default gateway",
+          "device": "PC-103",
+          "device_type": "Host",
+          "issue": "External network unreachable",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "192.168.10.51",
+          "destination_ip": "8.8.8.8",
+          "vlan_id": "10",
+          "interface": "Ethernet0",
+          "protocol": "ICMP",
+          "description": "Host can communicate locally but cannot reach external networks",
+          "similarity": 0.048
+        },
+        {
+          "case_id": "CASE-012",
+          "title": "DNS resolution failure",
+          "device": "PC-110",
+          "device_type": "Host",
+          "issue": "Domain names cannot be resolved",
+          "severity": "Medium",
+          "status": "Open",
+          "source_ip": "192.168.30.20",
+          "destination_ip": "8.8.8.8",
+          "vlan_id": "30",
+          "interface": "Ethernet0",
+          "protocol": "DNS",
+          "description": "Network connectivity works but DNS queries fail",
+          "similarity": 0.048
+        }
+      ]
+    },
+    "human_review_required": true,
+    "created_at": "2026-08-27T20:15:37.088699",
+    "responsible_ai": {
+      "rules_run_before_ai": true,
+      "historical_cases_used": true,
+      "ai_mediated_case_and_rules": true,
+      "human_review_required": true,
+      "automatic_configuration_change": false
+    }
   }
 ]
